@@ -50,6 +50,7 @@ namespace ir_planner
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dataGridView_SelectedCars = new System.Windows.Forms.DataGridView();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -62,19 +63,19 @@ namespace ir_planner
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ScheduleTab = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.ManageTab = new System.Windows.Forms.TabPage();
-            this.StatsTab = new System.Windows.Forms.TabPage();
-            this.checkBox_LicenseA = new System.Windows.Forms.CheckBox();
-            this.checkBox_LicenseB = new System.Windows.Forms.CheckBox();
-            this.groupbox_Filter_License = new System.Windows.Forms.GroupBox();
-            this.checkBox_LicenseC = new System.Windows.Forms.CheckBox();
-            this.checkBox_LicenseD = new System.Windows.Forms.CheckBox();
-            this.checkBox_LicenseR = new System.Windows.Forms.CheckBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.groupbox_Filter_License = new System.Windows.Forms.GroupBox();
+            this.checkBox_LicenseR = new System.Windows.Forms.CheckBox();
+            this.checkBox_LicenseD = new System.Windows.Forms.CheckBox();
+            this.checkBox_LicenseC = new System.Windows.Forms.CheckBox();
+            this.checkBox_LicenseA = new System.Windows.Forms.CheckBox();
+            this.checkBox_LicenseB = new System.Windows.Forms.CheckBox();
+            this.ManageTab = new System.Windows.Forms.TabPage();
+            this.StatsTab = new System.Windows.Forms.TabPage();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,7 +110,6 @@ namespace ir_planner
             this.counterDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isOwnedDataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Leagues)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -127,10 +127,10 @@ namespace ir_planner
             this.tabControl1.SuspendLayout();
             this.ScheduleTab.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupbox_Filter_License.SuspendLayout();
             this.ManageTab.SuspendLayout();
             this.StatsTab.SuspendLayout();
-            this.groupbox_Filter_License.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leagueModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackModelBindingSource)).BeginInit();
@@ -283,6 +283,16 @@ namespace ir_planner
             this.groupBox11.TabIndex = 5;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Details";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(248, 58);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Placeholder";
             // 
             // groupBox10
             // 
@@ -542,6 +552,7 @@ namespace ir_planner
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1712, 933);
             this.tabControl1.TabIndex = 12;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // ScheduleTab
             // 
@@ -567,105 +578,6 @@ namespace ir_planner
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
-            // 
-            // ManageTab
-            // 
-            this.ManageTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ManageTab.Controls.Add(this.groupBox2);
-            this.ManageTab.Controls.Add(this.groupBox3);
-            this.ManageTab.Location = new System.Drawing.Point(4, 25);
-            this.ManageTab.Name = "ManageTab";
-            this.ManageTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ManageTab.Size = new System.Drawing.Size(1704, 904);
-            this.ManageTab.TabIndex = 2;
-            this.ManageTab.Text = "Manage";
-            // 
-            // StatsTab
-            // 
-            this.StatsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.StatsTab.Controls.Add(this.groupBox11);
-            this.StatsTab.Controls.Add(this.groupBox10);
-            this.StatsTab.Location = new System.Drawing.Point(4, 25);
-            this.StatsTab.Name = "StatsTab";
-            this.StatsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.StatsTab.Size = new System.Drawing.Size(1704, 904);
-            this.StatsTab.TabIndex = 1;
-            this.StatsTab.Text = "Statistics";
-            // 
-            // checkBox_LicenseA
-            // 
-            this.checkBox_LicenseA.AutoSize = true;
-            this.checkBox_LicenseA.Checked = true;
-            this.checkBox_LicenseA.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_LicenseA.Location = new System.Drawing.Point(6, 19);
-            this.checkBox_LicenseA.Name = "checkBox_LicenseA";
-            this.checkBox_LicenseA.Size = new System.Drawing.Size(33, 17);
-            this.checkBox_LicenseA.TabIndex = 3;
-            this.checkBox_LicenseA.Text = "A";
-            this.checkBox_LicenseA.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_LicenseB
-            // 
-            this.checkBox_LicenseB.AutoSize = true;
-            this.checkBox_LicenseB.Checked = true;
-            this.checkBox_LicenseB.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_LicenseB.Location = new System.Drawing.Point(6, 42);
-            this.checkBox_LicenseB.Name = "checkBox_LicenseB";
-            this.checkBox_LicenseB.Size = new System.Drawing.Size(33, 17);
-            this.checkBox_LicenseB.TabIndex = 4;
-            this.checkBox_LicenseB.Text = "B";
-            this.checkBox_LicenseB.UseVisualStyleBackColor = true;
-            // 
-            // groupbox_Filter_License
-            // 
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseR);
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseD);
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseC);
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseA);
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseB);
-            this.groupbox_Filter_License.ForeColor = System.Drawing.Color.White;
-            this.groupbox_Filter_License.Location = new System.Drawing.Point(6, 19);
-            this.groupbox_Filter_License.Name = "groupbox_Filter_License";
-            this.groupbox_Filter_License.Size = new System.Drawing.Size(107, 133);
-            this.groupbox_Filter_License.TabIndex = 5;
-            this.groupbox_Filter_License.TabStop = false;
-            this.groupbox_Filter_License.Text = "License";
-            // 
-            // checkBox_LicenseC
-            // 
-            this.checkBox_LicenseC.AutoSize = true;
-            this.checkBox_LicenseC.Checked = true;
-            this.checkBox_LicenseC.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_LicenseC.Location = new System.Drawing.Point(6, 65);
-            this.checkBox_LicenseC.Name = "checkBox_LicenseC";
-            this.checkBox_LicenseC.Size = new System.Drawing.Size(33, 17);
-            this.checkBox_LicenseC.TabIndex = 5;
-            this.checkBox_LicenseC.Text = "C";
-            this.checkBox_LicenseC.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_LicenseD
-            // 
-            this.checkBox_LicenseD.AutoSize = true;
-            this.checkBox_LicenseD.Checked = true;
-            this.checkBox_LicenseD.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_LicenseD.Location = new System.Drawing.Point(6, 88);
-            this.checkBox_LicenseD.Name = "checkBox_LicenseD";
-            this.checkBox_LicenseD.Size = new System.Drawing.Size(34, 17);
-            this.checkBox_LicenseD.TabIndex = 6;
-            this.checkBox_LicenseD.Text = "D";
-            this.checkBox_LicenseD.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_LicenseR
-            // 
-            this.checkBox_LicenseR.AutoSize = true;
-            this.checkBox_LicenseR.Checked = true;
-            this.checkBox_LicenseR.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_LicenseR.Location = new System.Drawing.Point(6, 111);
-            this.checkBox_LicenseR.Name = "checkBox_LicenseR";
-            this.checkBox_LicenseR.Size = new System.Drawing.Size(34, 17);
-            this.checkBox_LicenseR.TabIndex = 7;
-            this.checkBox_LicenseR.Text = "R";
-            this.checkBox_LicenseR.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
@@ -728,6 +640,105 @@ namespace ir_planner
             this.checkBox5.TabIndex = 4;
             this.checkBox5.Text = "Dirt";
             this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // groupbox_Filter_License
+            // 
+            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseR);
+            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseD);
+            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseC);
+            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseA);
+            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseB);
+            this.groupbox_Filter_License.ForeColor = System.Drawing.Color.White;
+            this.groupbox_Filter_License.Location = new System.Drawing.Point(6, 19);
+            this.groupbox_Filter_License.Name = "groupbox_Filter_License";
+            this.groupbox_Filter_License.Size = new System.Drawing.Size(107, 133);
+            this.groupbox_Filter_License.TabIndex = 5;
+            this.groupbox_Filter_License.TabStop = false;
+            this.groupbox_Filter_License.Text = "License";
+            // 
+            // checkBox_LicenseR
+            // 
+            this.checkBox_LicenseR.AutoSize = true;
+            this.checkBox_LicenseR.Checked = true;
+            this.checkBox_LicenseR.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_LicenseR.Location = new System.Drawing.Point(6, 111);
+            this.checkBox_LicenseR.Name = "checkBox_LicenseR";
+            this.checkBox_LicenseR.Size = new System.Drawing.Size(34, 17);
+            this.checkBox_LicenseR.TabIndex = 7;
+            this.checkBox_LicenseR.Text = "R";
+            this.checkBox_LicenseR.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_LicenseD
+            // 
+            this.checkBox_LicenseD.AutoSize = true;
+            this.checkBox_LicenseD.Checked = true;
+            this.checkBox_LicenseD.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_LicenseD.Location = new System.Drawing.Point(6, 88);
+            this.checkBox_LicenseD.Name = "checkBox_LicenseD";
+            this.checkBox_LicenseD.Size = new System.Drawing.Size(34, 17);
+            this.checkBox_LicenseD.TabIndex = 6;
+            this.checkBox_LicenseD.Text = "D";
+            this.checkBox_LicenseD.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_LicenseC
+            // 
+            this.checkBox_LicenseC.AutoSize = true;
+            this.checkBox_LicenseC.Checked = true;
+            this.checkBox_LicenseC.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_LicenseC.Location = new System.Drawing.Point(6, 65);
+            this.checkBox_LicenseC.Name = "checkBox_LicenseC";
+            this.checkBox_LicenseC.Size = new System.Drawing.Size(33, 17);
+            this.checkBox_LicenseC.TabIndex = 5;
+            this.checkBox_LicenseC.Text = "C";
+            this.checkBox_LicenseC.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_LicenseA
+            // 
+            this.checkBox_LicenseA.AutoSize = true;
+            this.checkBox_LicenseA.Checked = true;
+            this.checkBox_LicenseA.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_LicenseA.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_LicenseA.Name = "checkBox_LicenseA";
+            this.checkBox_LicenseA.Size = new System.Drawing.Size(33, 17);
+            this.checkBox_LicenseA.TabIndex = 3;
+            this.checkBox_LicenseA.Text = "A";
+            this.checkBox_LicenseA.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_LicenseB
+            // 
+            this.checkBox_LicenseB.AutoSize = true;
+            this.checkBox_LicenseB.Checked = true;
+            this.checkBox_LicenseB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_LicenseB.Location = new System.Drawing.Point(6, 42);
+            this.checkBox_LicenseB.Name = "checkBox_LicenseB";
+            this.checkBox_LicenseB.Size = new System.Drawing.Size(33, 17);
+            this.checkBox_LicenseB.TabIndex = 4;
+            this.checkBox_LicenseB.Text = "B";
+            this.checkBox_LicenseB.UseVisualStyleBackColor = true;
+            // 
+            // ManageTab
+            // 
+            this.ManageTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ManageTab.Controls.Add(this.groupBox2);
+            this.ManageTab.Controls.Add(this.groupBox3);
+            this.ManageTab.Location = new System.Drawing.Point(4, 25);
+            this.ManageTab.Name = "ManageTab";
+            this.ManageTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ManageTab.Size = new System.Drawing.Size(1704, 904);
+            this.ManageTab.TabIndex = 2;
+            this.ManageTab.Text = "Manage";
+            // 
+            // StatsTab
+            // 
+            this.StatsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StatsTab.Controls.Add(this.groupBox11);
+            this.StatsTab.Controls.Add(this.groupBox10);
+            this.StatsTab.Location = new System.Drawing.Point(4, 25);
+            this.StatsTab.Name = "StatsTab";
+            this.StatsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.StatsTab.Size = new System.Drawing.Size(1704, 904);
+            this.StatsTab.TabIndex = 1;
+            this.StatsTab.Text = "Statistics";
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -1012,16 +1023,6 @@ namespace ir_planner
             this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
             this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 58);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Placeholder";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1051,12 +1052,12 @@ namespace ir_planner
             this.tabControl1.ResumeLayout(false);
             this.ScheduleTab.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.ManageTab.ResumeLayout(false);
-            this.StatsTab.ResumeLayout(false);
-            this.groupbox_Filter_License.ResumeLayout(false);
-            this.groupbox_Filter_License.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.groupbox_Filter_License.ResumeLayout(false);
+            this.groupbox_Filter_License.PerformLayout();
+            this.ManageTab.ResumeLayout(false);
+            this.StatsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.leagueModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackModelBindingSource)).EndInit();

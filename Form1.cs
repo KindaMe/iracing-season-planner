@@ -166,7 +166,6 @@ namespace ir_planner
             if (e.RowIndex != -1)
             {
                 SQLiteDataAccess.UpdateTrackInDB(tracks[e.RowIndex]);
-                UpdateLeagueColors();
                 LoadStats();
             }
         }
@@ -185,7 +184,6 @@ namespace ir_planner
             {
                 SQLiteDataAccess.UpdateCarInDB(cars[e.RowIndex]);
                 LoadLeagueCarsList(leagues[currentLeagueRowSelected]);
-                UpdateLeagueColors();
                 LoadStats();
             }
         }
@@ -244,6 +242,14 @@ namespace ir_planner
         private void C_CheckedChanged(object sender, EventArgs e)
         {
             LeagueFilterUpdate();
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (e.TabPage.Text == "Schedule")
+            {
+                UpdateLeagueColors();
+            }
         }
     }
 }
