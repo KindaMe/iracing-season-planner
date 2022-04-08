@@ -63,12 +63,12 @@ namespace ir_planner
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ScheduleTab = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.groupbox_Filter_License = new System.Windows.Forms.GroupBox();
+            this.groupBox_Filter_Type = new System.Windows.Forms.GroupBox();
+            this.checkBox_TypeOvalDirt = new System.Windows.Forms.CheckBox();
+            this.checkBox_TypeRoadDirt = new System.Windows.Forms.CheckBox();
+            this.checkBox_TypeRoad = new System.Windows.Forms.CheckBox();
+            this.checkBox_TypeOval = new System.Windows.Forms.CheckBox();
+            this.groupBox_Filter_License = new System.Windows.Forms.GroupBox();
             this.checkBox_LicenseR = new System.Windows.Forms.CheckBox();
             this.checkBox_LicenseD = new System.Windows.Forms.CheckBox();
             this.checkBox_LicenseC = new System.Windows.Forms.CheckBox();
@@ -76,21 +76,6 @@ namespace ir_planner
             this.checkBox_LicenseB = new System.Windows.Forms.CheckBox();
             this.ManageTab = new System.Windows.Forms.TabPage();
             this.StatsTab = new System.Windows.Forms.TabPage();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.licenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week9DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week11DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week12DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leagueModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isOwnedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -110,6 +95,22 @@ namespace ir_planner
             this.counterDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isOwnedDataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.licenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week9DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week11DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week12DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Leagues)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -127,8 +128,8 @@ namespace ir_planner
             this.tabControl1.SuspendLayout();
             this.ScheduleTab.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupbox_Filter_License.SuspendLayout();
+            this.groupBox_Filter_Type.SuspendLayout();
+            this.groupBox_Filter_License.SuspendLayout();
             this.ManageTab.SuspendLayout();
             this.StatsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leagueModelBindingSource)).BeginInit();
@@ -173,6 +174,7 @@ namespace ir_planner
             this.iDDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.licenseDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
             this.week1DataGridViewTextBoxColumn,
             this.week2DataGridViewTextBoxColumn,
             this.week3DataGridViewTextBoxColumn,
@@ -569,8 +571,8 @@ namespace ir_planner
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.groupBox8);
-            this.groupBox4.Controls.Add(this.groupbox_Filter_License);
+            this.groupBox4.Controls.Add(this.groupBox_Filter_Type);
+            this.groupBox4.Controls.Add(this.groupBox_Filter_License);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(1362, 549);
             this.groupBox4.Name = "groupBox4";
@@ -579,82 +581,82 @@ namespace ir_planner
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
             // 
-            // groupBox8
+            // groupBox_Filter_Type
             // 
-            this.groupBox8.Controls.Add(this.checkBox2);
-            this.groupBox8.Controls.Add(this.checkBox3);
-            this.groupBox8.Controls.Add(this.checkBox4);
-            this.groupBox8.Controls.Add(this.checkBox5);
-            this.groupBox8.ForeColor = System.Drawing.Color.White;
-            this.groupBox8.Location = new System.Drawing.Point(6, 158);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(107, 111);
-            this.groupBox8.TabIndex = 6;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Type (ph)";
+            this.groupBox_Filter_Type.Controls.Add(this.checkBox_TypeOvalDirt);
+            this.groupBox_Filter_Type.Controls.Add(this.checkBox_TypeRoadDirt);
+            this.groupBox_Filter_Type.Controls.Add(this.checkBox_TypeRoad);
+            this.groupBox_Filter_Type.Controls.Add(this.checkBox_TypeOval);
+            this.groupBox_Filter_Type.ForeColor = System.Drawing.Color.White;
+            this.groupBox_Filter_Type.Location = new System.Drawing.Point(6, 158);
+            this.groupBox_Filter_Type.Name = "groupBox_Filter_Type";
+            this.groupBox_Filter_Type.Size = new System.Drawing.Size(107, 111);
+            this.groupBox_Filter_Type.TabIndex = 6;
+            this.groupBox_Filter_Type.TabStop = false;
+            this.groupBox_Filter_Type.Text = "Type";
             // 
-            // checkBox2
+            // checkBox_TypeOvalDirt
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(6, 88);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(41, 17);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "RX";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox_TypeOvalDirt.AutoSize = true;
+            this.checkBox_TypeOvalDirt.Checked = true;
+            this.checkBox_TypeOvalDirt.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_TypeOvalDirt.Location = new System.Drawing.Point(6, 88);
+            this.checkBox_TypeOvalDirt.Name = "checkBox_TypeOvalDirt";
+            this.checkBox_TypeOvalDirt.Size = new System.Drawing.Size(67, 17);
+            this.checkBox_TypeOvalDirt.TabIndex = 6;
+            this.checkBox_TypeOvalDirt.Text = "Dirt Oval";
+            this.checkBox_TypeOvalDirt.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBox_TypeRoadDirt
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Location = new System.Drawing.Point(6, 65);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(48, 17);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Oval";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox_TypeRoadDirt.AutoSize = true;
+            this.checkBox_TypeRoadDirt.Checked = true;
+            this.checkBox_TypeRoadDirt.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_TypeRoadDirt.Location = new System.Drawing.Point(6, 65);
+            this.checkBox_TypeRoadDirt.Name = "checkBox_TypeRoadDirt";
+            this.checkBox_TypeRoadDirt.Size = new System.Drawing.Size(71, 17);
+            this.checkBox_TypeRoadDirt.TabIndex = 5;
+            this.checkBox_TypeRoadDirt.Text = "Dirt Road";
+            this.checkBox_TypeRoadDirt.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBox_TypeRoad
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Location = new System.Drawing.Point(6, 19);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(52, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Road";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox_TypeRoad.AutoSize = true;
+            this.checkBox_TypeRoad.Checked = true;
+            this.checkBox_TypeRoad.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_TypeRoad.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_TypeRoad.Name = "checkBox_TypeRoad";
+            this.checkBox_TypeRoad.Size = new System.Drawing.Size(52, 17);
+            this.checkBox_TypeRoad.TabIndex = 3;
+            this.checkBox_TypeRoad.Text = "Road";
+            this.checkBox_TypeRoad.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkBox_TypeOval
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Checked = true;
-            this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox5.Location = new System.Drawing.Point(6, 42);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(42, 17);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Dirt";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox_TypeOval.AutoSize = true;
+            this.checkBox_TypeOval.Checked = true;
+            this.checkBox_TypeOval.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_TypeOval.Location = new System.Drawing.Point(6, 42);
+            this.checkBox_TypeOval.Name = "checkBox_TypeOval";
+            this.checkBox_TypeOval.Size = new System.Drawing.Size(48, 17);
+            this.checkBox_TypeOval.TabIndex = 4;
+            this.checkBox_TypeOval.Text = "Oval";
+            this.checkBox_TypeOval.UseVisualStyleBackColor = true;
             // 
-            // groupbox_Filter_License
+            // groupBox_Filter_License
             // 
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseR);
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseD);
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseC);
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseA);
-            this.groupbox_Filter_License.Controls.Add(this.checkBox_LicenseB);
-            this.groupbox_Filter_License.ForeColor = System.Drawing.Color.White;
-            this.groupbox_Filter_License.Location = new System.Drawing.Point(6, 19);
-            this.groupbox_Filter_License.Name = "groupbox_Filter_License";
-            this.groupbox_Filter_License.Size = new System.Drawing.Size(107, 133);
-            this.groupbox_Filter_License.TabIndex = 5;
-            this.groupbox_Filter_License.TabStop = false;
-            this.groupbox_Filter_License.Text = "License";
+            this.groupBox_Filter_License.Controls.Add(this.checkBox_LicenseR);
+            this.groupBox_Filter_License.Controls.Add(this.checkBox_LicenseD);
+            this.groupBox_Filter_License.Controls.Add(this.checkBox_LicenseC);
+            this.groupBox_Filter_License.Controls.Add(this.checkBox_LicenseA);
+            this.groupBox_Filter_License.Controls.Add(this.checkBox_LicenseB);
+            this.groupBox_Filter_License.ForeColor = System.Drawing.Color.White;
+            this.groupBox_Filter_License.Location = new System.Drawing.Point(6, 19);
+            this.groupBox_Filter_License.Name = "groupBox_Filter_License";
+            this.groupBox_Filter_License.Size = new System.Drawing.Size(107, 133);
+            this.groupBox_Filter_License.TabIndex = 5;
+            this.groupBox_Filter_License.TabStop = false;
+            this.groupBox_Filter_License.Text = "License";
             // 
             // checkBox_LicenseR
             // 
@@ -740,150 +742,9 @@ namespace ir_planner
             this.StatsTab.TabIndex = 1;
             this.StatsTab.Text = "Statistics";
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.Frozen = true;
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            this.iDDataGridViewTextBoxColumn.Width = 34;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.Frozen = true;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nameDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // licenseDataGridViewTextBoxColumn
-            // 
-            this.licenseDataGridViewTextBoxColumn.DataPropertyName = "License";
-            this.licenseDataGridViewTextBoxColumn.Frozen = true;
-            this.licenseDataGridViewTextBoxColumn.HeaderText = "License";
-            this.licenseDataGridViewTextBoxColumn.Name = "licenseDataGridViewTextBoxColumn";
-            this.licenseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.licenseDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.licenseDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // week1DataGridViewTextBoxColumn
-            // 
-            this.week1DataGridViewTextBoxColumn.DataPropertyName = "Week1";
-            this.week1DataGridViewTextBoxColumn.HeaderText = "Week1";
-            this.week1DataGridViewTextBoxColumn.Name = "week1DataGridViewTextBoxColumn";
-            this.week1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week1DataGridViewTextBoxColumn.Width = 68;
-            // 
-            // week2DataGridViewTextBoxColumn
-            // 
-            this.week2DataGridViewTextBoxColumn.DataPropertyName = "Week2";
-            this.week2DataGridViewTextBoxColumn.HeaderText = "Week2";
-            this.week2DataGridViewTextBoxColumn.Name = "week2DataGridViewTextBoxColumn";
-            this.week2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week2DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week2DataGridViewTextBoxColumn.Width = 72;
-            // 
-            // week3DataGridViewTextBoxColumn
-            // 
-            this.week3DataGridViewTextBoxColumn.DataPropertyName = "Week3";
-            this.week3DataGridViewTextBoxColumn.HeaderText = "Week3";
-            this.week3DataGridViewTextBoxColumn.Name = "week3DataGridViewTextBoxColumn";
-            this.week3DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week3DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week3DataGridViewTextBoxColumn.Width = 72;
-            // 
-            // week4DataGridViewTextBoxColumn
-            // 
-            this.week4DataGridViewTextBoxColumn.DataPropertyName = "Week4";
-            this.week4DataGridViewTextBoxColumn.HeaderText = "Week4";
-            this.week4DataGridViewTextBoxColumn.Name = "week4DataGridViewTextBoxColumn";
-            this.week4DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week4DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week4DataGridViewTextBoxColumn.Width = 73;
-            // 
-            // week5DataGridViewTextBoxColumn
-            // 
-            this.week5DataGridViewTextBoxColumn.DataPropertyName = "Week5";
-            this.week5DataGridViewTextBoxColumn.HeaderText = "Week5";
-            this.week5DataGridViewTextBoxColumn.Name = "week5DataGridViewTextBoxColumn";
-            this.week5DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week5DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week5DataGridViewTextBoxColumn.Width = 72;
-            // 
-            // week6DataGridViewTextBoxColumn
-            // 
-            this.week6DataGridViewTextBoxColumn.DataPropertyName = "Week6";
-            this.week6DataGridViewTextBoxColumn.HeaderText = "Week6";
-            this.week6DataGridViewTextBoxColumn.Name = "week6DataGridViewTextBoxColumn";
-            this.week6DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week6DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week6DataGridViewTextBoxColumn.Width = 71;
-            // 
-            // week7DataGridViewTextBoxColumn
-            // 
-            this.week7DataGridViewTextBoxColumn.DataPropertyName = "Week7";
-            this.week7DataGridViewTextBoxColumn.HeaderText = "Week7";
-            this.week7DataGridViewTextBoxColumn.Name = "week7DataGridViewTextBoxColumn";
-            this.week7DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week7DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week7DataGridViewTextBoxColumn.Width = 71;
-            // 
-            // week8DataGridViewTextBoxColumn
-            // 
-            this.week8DataGridViewTextBoxColumn.DataPropertyName = "Week8";
-            this.week8DataGridViewTextBoxColumn.HeaderText = "Week8";
-            this.week8DataGridViewTextBoxColumn.Name = "week8DataGridViewTextBoxColumn";
-            this.week8DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week8DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week8DataGridViewTextBoxColumn.Width = 72;
-            // 
-            // week9DataGridViewTextBoxColumn
-            // 
-            this.week9DataGridViewTextBoxColumn.DataPropertyName = "Week9";
-            this.week9DataGridViewTextBoxColumn.HeaderText = "Week9";
-            this.week9DataGridViewTextBoxColumn.Name = "week9DataGridViewTextBoxColumn";
-            this.week9DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week9DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week9DataGridViewTextBoxColumn.Width = 71;
-            // 
-            // week10DataGridViewTextBoxColumn
-            // 
-            this.week10DataGridViewTextBoxColumn.DataPropertyName = "Week10";
-            this.week10DataGridViewTextBoxColumn.HeaderText = "Week10";
-            this.week10DataGridViewTextBoxColumn.Name = "week10DataGridViewTextBoxColumn";
-            this.week10DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week10DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week10DataGridViewTextBoxColumn.Width = 78;
-            // 
-            // week11DataGridViewTextBoxColumn
-            // 
-            this.week11DataGridViewTextBoxColumn.DataPropertyName = "Week11";
-            this.week11DataGridViewTextBoxColumn.HeaderText = "Week11";
-            this.week11DataGridViewTextBoxColumn.Name = "week11DataGridViewTextBoxColumn";
-            this.week11DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week11DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week11DataGridViewTextBoxColumn.Width = 74;
-            // 
-            // week12DataGridViewTextBoxColumn
-            // 
-            this.week12DataGridViewTextBoxColumn.DataPropertyName = "Week12";
-            this.week12DataGridViewTextBoxColumn.HeaderText = "Week12";
-            this.week12DataGridViewTextBoxColumn.Name = "week12DataGridViewTextBoxColumn";
-            this.week12DataGridViewTextBoxColumn.ReadOnly = true;
-            this.week12DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.week12DataGridViewTextBoxColumn.Width = 78;
-            // 
             // leagueModelBindingSource
             // 
             this.leagueModelBindingSource.DataSource = typeof(ir_planner.LeagueModel);
-            this.leagueModelBindingSource.Filter = "";
-            this.leagueModelBindingSource.Sort = "";
             // 
             // iDDataGridViewTextBoxColumn1
             // 
@@ -1023,6 +884,157 @@ namespace ir_planner
             this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
             this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.Frozen = true;
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.iDDataGridViewTextBoxColumn.Width = 34;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.Frozen = true;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nameDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // licenseDataGridViewTextBoxColumn
+            // 
+            this.licenseDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.licenseDataGridViewTextBoxColumn.DataPropertyName = "License";
+            this.licenseDataGridViewTextBoxColumn.Frozen = true;
+            this.licenseDataGridViewTextBoxColumn.HeaderText = "License";
+            this.licenseDataGridViewTextBoxColumn.Name = "licenseDataGridViewTextBoxColumn";
+            this.licenseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.licenseDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.licenseDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.Frozen = true;
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.typeDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // week1DataGridViewTextBoxColumn
+            // 
+            this.week1DataGridViewTextBoxColumn.DataPropertyName = "Week1";
+            this.week1DataGridViewTextBoxColumn.HeaderText = "Week 1";
+            this.week1DataGridViewTextBoxColumn.Name = "week1DataGridViewTextBoxColumn";
+            this.week1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week1DataGridViewTextBoxColumn.Width = 73;
+            // 
+            // week2DataGridViewTextBoxColumn
+            // 
+            this.week2DataGridViewTextBoxColumn.DataPropertyName = "Week2";
+            this.week2DataGridViewTextBoxColumn.HeaderText = "Week 2";
+            this.week2DataGridViewTextBoxColumn.Name = "week2DataGridViewTextBoxColumn";
+            this.week2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week2DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week2DataGridViewTextBoxColumn.Width = 77;
+            // 
+            // week3DataGridViewTextBoxColumn
+            // 
+            this.week3DataGridViewTextBoxColumn.DataPropertyName = "Week3";
+            this.week3DataGridViewTextBoxColumn.HeaderText = "Week 3";
+            this.week3DataGridViewTextBoxColumn.Name = "week3DataGridViewTextBoxColumn";
+            this.week3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week3DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week3DataGridViewTextBoxColumn.Width = 77;
+            // 
+            // week4DataGridViewTextBoxColumn
+            // 
+            this.week4DataGridViewTextBoxColumn.DataPropertyName = "Week4";
+            this.week4DataGridViewTextBoxColumn.HeaderText = "Week 4";
+            this.week4DataGridViewTextBoxColumn.Name = "week4DataGridViewTextBoxColumn";
+            this.week4DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week4DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week4DataGridViewTextBoxColumn.Width = 78;
+            // 
+            // week5DataGridViewTextBoxColumn
+            // 
+            this.week5DataGridViewTextBoxColumn.DataPropertyName = "Week5";
+            this.week5DataGridViewTextBoxColumn.HeaderText = "Week 5";
+            this.week5DataGridViewTextBoxColumn.Name = "week5DataGridViewTextBoxColumn";
+            this.week5DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week5DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week5DataGridViewTextBoxColumn.Width = 77;
+            // 
+            // week6DataGridViewTextBoxColumn
+            // 
+            this.week6DataGridViewTextBoxColumn.DataPropertyName = "Week6";
+            this.week6DataGridViewTextBoxColumn.HeaderText = "Week 6";
+            this.week6DataGridViewTextBoxColumn.Name = "week6DataGridViewTextBoxColumn";
+            this.week6DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week6DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week6DataGridViewTextBoxColumn.Width = 76;
+            // 
+            // week7DataGridViewTextBoxColumn
+            // 
+            this.week7DataGridViewTextBoxColumn.DataPropertyName = "Week7";
+            this.week7DataGridViewTextBoxColumn.HeaderText = "Week 7";
+            this.week7DataGridViewTextBoxColumn.Name = "week7DataGridViewTextBoxColumn";
+            this.week7DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week7DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week7DataGridViewTextBoxColumn.Width = 76;
+            // 
+            // week8DataGridViewTextBoxColumn
+            // 
+            this.week8DataGridViewTextBoxColumn.DataPropertyName = "Week8";
+            this.week8DataGridViewTextBoxColumn.HeaderText = "Week 8";
+            this.week8DataGridViewTextBoxColumn.Name = "week8DataGridViewTextBoxColumn";
+            this.week8DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week8DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week8DataGridViewTextBoxColumn.Width = 77;
+            // 
+            // week9DataGridViewTextBoxColumn
+            // 
+            this.week9DataGridViewTextBoxColumn.DataPropertyName = "Week9";
+            this.week9DataGridViewTextBoxColumn.HeaderText = "Week 9";
+            this.week9DataGridViewTextBoxColumn.Name = "week9DataGridViewTextBoxColumn";
+            this.week9DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week9DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week9DataGridViewTextBoxColumn.Width = 76;
+            // 
+            // week10DataGridViewTextBoxColumn
+            // 
+            this.week10DataGridViewTextBoxColumn.DataPropertyName = "Week10";
+            this.week10DataGridViewTextBoxColumn.HeaderText = "Week 10";
+            this.week10DataGridViewTextBoxColumn.Name = "week10DataGridViewTextBoxColumn";
+            this.week10DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week10DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week10DataGridViewTextBoxColumn.Width = 83;
+            // 
+            // week11DataGridViewTextBoxColumn
+            // 
+            this.week11DataGridViewTextBoxColumn.DataPropertyName = "Week11";
+            this.week11DataGridViewTextBoxColumn.HeaderText = "Week 11";
+            this.week11DataGridViewTextBoxColumn.Name = "week11DataGridViewTextBoxColumn";
+            this.week11DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week11DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week11DataGridViewTextBoxColumn.Width = 79;
+            // 
+            // week12DataGridViewTextBoxColumn
+            // 
+            this.week12DataGridViewTextBoxColumn.DataPropertyName = "Week12";
+            this.week12DataGridViewTextBoxColumn.HeaderText = "Week 12";
+            this.week12DataGridViewTextBoxColumn.Name = "week12DataGridViewTextBoxColumn";
+            this.week12DataGridViewTextBoxColumn.ReadOnly = true;
+            this.week12DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.week12DataGridViewTextBoxColumn.Width = 83;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1052,10 +1064,10 @@ namespace ir_planner
             this.tabControl1.ResumeLayout(false);
             this.ScheduleTab.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupbox_Filter_License.ResumeLayout(false);
-            this.groupbox_Filter_License.PerformLayout();
+            this.groupBox_Filter_Type.ResumeLayout(false);
+            this.groupBox_Filter_Type.PerformLayout();
+            this.groupBox_Filter_License.ResumeLayout(false);
+            this.groupBox_Filter_License.PerformLayout();
             this.ManageTab.ResumeLayout(false);
             this.StatsTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.leagueModelBindingSource)).EndInit();
@@ -1080,24 +1092,8 @@ namespace ir_planner
         private System.Windows.Forms.DataGridView dataGridView_Cars;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView_Tracks;
-        private System.Windows.Forms.BindingSource leagueModelBindingSource;
         private System.Windows.Forms.BindingSource carModelBindingSource;
         private System.Windows.Forms.BindingSource trackModelBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn licenseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week5DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week6DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week7DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week8DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week9DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week10DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week11DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn week12DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
@@ -1121,18 +1117,35 @@ namespace ir_planner
         private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupbox_Filter_License;
+        private System.Windows.Forms.GroupBox groupBox_Filter_License;
         private System.Windows.Forms.CheckBox checkBox_LicenseR;
         private System.Windows.Forms.CheckBox checkBox_LicenseD;
         private System.Windows.Forms.CheckBox checkBox_LicenseC;
         private System.Windows.Forms.CheckBox checkBox_LicenseA;
         private System.Windows.Forms.CheckBox checkBox_LicenseB;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.GroupBox groupBox_Filter_Type;
+        private System.Windows.Forms.CheckBox checkBox_TypeOvalDirt;
+        private System.Windows.Forms.CheckBox checkBox_TypeRoadDirt;
+        private System.Windows.Forms.CheckBox checkBox_TypeRoad;
+        private System.Windows.Forms.CheckBox checkBox_TypeOval;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource leagueModelBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn licenseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week5DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week6DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week7DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week8DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week9DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week10DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week11DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn week12DataGridViewTextBoxColumn;
     }
 }
 

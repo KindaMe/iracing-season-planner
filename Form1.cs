@@ -30,7 +30,8 @@ namespace ir_planner
             LoadLeaguesList();
             LoadLeagueCarsList(leagues[currentLeagueRowSelected]);
 
-            groupbox_Filter_License.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
+            groupBox_Filter_License.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
+            groupBox_Filter_Type.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
             LoadStats();
         }
 
@@ -68,7 +69,7 @@ namespace ir_planner
                 //track colors ph
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (cell.ColumnIndex > 2 && cell.Value != null)
+                    if (cell.ColumnIndex > 3 && cell.Value != null)
                     {
                         bool isTrackOwned = SQLiteDataAccess.IsTrackOwned(cell.Value.ToString());
 
@@ -200,7 +201,7 @@ namespace ir_planner
 
             for (int u = 0; u < dataGridView_Leagues.RowCount; u++)
             {
-                if (FilterChecker(dataGridView_Leagues.Rows[u].Cells[2].Value.ToString()))
+                if (FilterChecker(dataGridView_Leagues.Rows[u].Cells[2].Value.ToString(), dataGridView_Leagues.Rows[u].Cells[3].Value.ToString()))
                 {
                     dataGridView_Leagues.Rows[u].Visible = true;
                 }
@@ -213,30 +214,86 @@ namespace ir_planner
             currencyManager.ResumeBinding();
         }
 
-        private bool FilterChecker(string CheckThis)
+        private bool FilterChecker(string LicenseToCheck, string LeagueTypeToCheck)
         {
-            if (checkBox_LicenseA.Checked && checkBox_LicenseA.Text == CheckThis)
+            switch (LicenseToCheck)
             {
-                return true;
-            }
-            if (checkBox_LicenseB.Checked && checkBox_LicenseB.Text == CheckThis)
-            {
-                return true;
-            }
-            if (checkBox_LicenseC.Checked && checkBox_LicenseC.Text == CheckThis)
-            {
-                return true;
-            }
-            if (checkBox_LicenseD.Checked && checkBox_LicenseD.Text == CheckThis)
-            {
-                return true;
-            }
-            if (checkBox_LicenseR.Checked && checkBox_LicenseR.Text == CheckThis)
-            {
-                return true;
+                case "A":
+                    if (!checkBox_LicenseA.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                case "B":
+                    if (!checkBox_LicenseB.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                case "C":
+                    if (!checkBox_LicenseC.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                case "D":
+                    if (!checkBox_LicenseD.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                case "R":
+                    if (!checkBox_LicenseR.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show("License Filter Error");
+                    break;
             }
 
-            return false;
+            switch (LeagueTypeToCheck)
+            {
+                case "Road":
+                    if (!checkBox_TypeRoad.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                case "Oval":
+                    if (!checkBox_TypeOval.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                case "Dirt Road":
+                    if (!checkBox_TypeRoadDirt.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                case "Dirt Oval":
+                    if (!checkBox_TypeOvalDirt.Checked)
+                    {
+                        return false;
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show("Type Filter Error");
+                    break;
+            }
+
+            return true;
         }
 
         private void C_CheckedChanged(object sender, EventArgs e)

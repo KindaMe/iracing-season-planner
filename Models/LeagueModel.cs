@@ -10,6 +10,8 @@ namespace ir_planner
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public char License { get; set; }
+        public string Type { get; set; }
         public string Week1 { get; set; }
         public string Week2 { get; set; }
         public string Week3 { get; set; }
@@ -22,6 +24,5 @@ namespace ir_planner
         public string Week10 { get; set; }
         public string Week11 { get; set; }
         public string Week12 { get; set; }
-        public char License { get; set; }
     }
 }
