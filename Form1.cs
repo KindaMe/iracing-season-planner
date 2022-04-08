@@ -30,15 +30,15 @@ namespace ir_planner
             LoadLeaguesList();
             LoadLeagueCarsList(leagues[currentLeagueRowSelected]);
 
+            groupbox_Filter_License.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
             LoadStats();
         }
 
         private void UpdateLeagueColors()
         {
-            //dataGridView_Leagues.ClearSelection();
-
             foreach (DataGridViewRow row in dataGridView_Leagues.Rows)
             {
+                //league colors ph
                 List<CarModel> temp = SQLiteDataAccess.LoadLeagueCars(leagues[row.Index]);
                 int ownedCarsCount = 0;
 
@@ -65,7 +65,7 @@ namespace ir_planner
                     row.Cells[1].Style.SelectionForeColor = Color.Red;
                 }
 
-                //tracks colors ph
+                //track colors ph
                 foreach (DataGridViewCell cell in row.Cells)
                 {
                     if (cell.ColumnIndex > 2 && cell.Value != null)
@@ -95,11 +95,8 @@ namespace ir_planner
                         }
                     }
                 }
-
-                //tcph end
             }
             dataGridView_Leagues.Refresh();
-            //MessageBox.Show("Color Updated!");
         }
 
         private void LoadCarList()
@@ -170,6 +167,7 @@ namespace ir_planner
             {
                 SQLiteDataAccess.UpdateTrackInDB(tracks[e.RowIndex]);
                 UpdateLeagueColors();
+                LoadStats();
             }
         }
 
@@ -188,7 +186,64 @@ namespace ir_planner
                 SQLiteDataAccess.UpdateCarInDB(cars[e.RowIndex]);
                 LoadLeagueCarsList(leagues[currentLeagueRowSelected]);
                 UpdateLeagueColors();
+                LoadStats();
             }
+        }
+
+        private void LeagueFilterUpdate()
+        {
+            CurrencyManager currencyManager = (CurrencyManager)BindingContext[dataGridView_Leagues.DataSource];
+            currencyManager.SuspendBinding();
+
+            for (int u = 0; u < dataGridView_Leagues.RowCount; u++)
+            {
+                dataGridView_Leagues.Rows[u].Visible = true;
+            }
+
+            for (int u = 0; u < dataGridView_Leagues.RowCount; u++)
+            {
+                if (FilterChecker(dataGridView_Leagues.Rows[u].Cells[2].Value.ToString()))
+                {
+                    dataGridView_Leagues.Rows[u].Visible = true;
+                }
+                else
+                {
+                    dataGridView_Leagues.Rows[u].Visible = false;
+                }
+            }
+
+            currencyManager.ResumeBinding();
+        }
+
+        private bool FilterChecker(string CheckThis)
+        {
+            if (checkBox_LicenseA.Checked && checkBox_LicenseA.Text == CheckThis)
+            {
+                return true;
+            }
+            if (checkBox_LicenseB.Checked && checkBox_LicenseB.Text == CheckThis)
+            {
+                return true;
+            }
+            if (checkBox_LicenseC.Checked && checkBox_LicenseC.Text == CheckThis)
+            {
+                return true;
+            }
+            if (checkBox_LicenseD.Checked && checkBox_LicenseD.Text == CheckThis)
+            {
+                return true;
+            }
+            if (checkBox_LicenseR.Checked && checkBox_LicenseR.Text == CheckThis)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void C_CheckedChanged(object sender, EventArgs e)
+        {
+            LeagueFilterUpdate();
         }
     }
 }
