@@ -43,7 +43,7 @@ namespace ir_planner
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<CarModel>("SELECT Cars.ID,Cars.Name,Cars.isOwned FROM Cars_Leagues INNER JOIN Cars ON Car_ID = Cars.ID WHERE League_ID = @ID ORDER BY Name", league);
+                var output = cnn.Query<CarModel>("SELECT * FROM Cars_Leagues INNER JOIN Cars ON Car_ID = Cars.ID WHERE League_ID = @ID ORDER BY Name", league);
                 return output.ToList();
             }
         }

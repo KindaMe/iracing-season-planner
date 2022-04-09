@@ -76,6 +76,9 @@ namespace ir_planner
             this.checkBox_LicenseB = new System.Windows.Forms.CheckBox();
             this.ManageTab = new System.Windows.Forms.TabPage();
             this.StatsTab = new System.Windows.Forms.TabPage();
+            this.nameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isOwnedDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,10 +99,8 @@ namespace ir_planner
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isOwnedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageBlobDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.carModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isOwnedDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isOwnedDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,6 +112,7 @@ namespace ir_planner
             this.counterDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isOwnedDataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Leagues)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -144,7 +146,7 @@ namespace ir_planner
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1348, 890);
+            this.groupBox1.Size = new System.Drawing.Size(1250, 890);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Leagues";
@@ -216,18 +218,19 @@ namespace ir_planner
             this.dataGridView_Leagues.ShowCellToolTips = false;
             this.dataGridView_Leagues.ShowEditingIcon = false;
             this.dataGridView_Leagues.ShowRowErrors = false;
-            this.dataGridView_Leagues.Size = new System.Drawing.Size(1342, 871);
+            this.dataGridView_Leagues.Size = new System.Drawing.Size(1244, 871);
             this.dataGridView_Leagues.TabIndex = 2;
             this.dataGridView_Leagues.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView_Leagues_DataBindingComplete);
             this.dataGridView_Leagues.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Leagues_RowEnter);
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.label2);
             this.groupBox7.Controls.Add(this.dataGridView_SelectedCars);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(1362, 6);
+            this.groupBox7.Location = new System.Drawing.Point(1264, 6);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(333, 537);
+            this.groupBox7.Size = new System.Drawing.Size(431, 537);
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Cars in selected league";
@@ -240,6 +243,7 @@ namespace ir_planner
             this.dataGridView_SelectedCars.AllowUserToResizeRows = false;
             this.dataGridView_SelectedCars.AutoGenerateColumns = false;
             this.dataGridView_SelectedCars.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_SelectedCars.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_SelectedCars.BackgroundColor = System.Drawing.Color.DimGray;
             this.dataGridView_SelectedCars.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -254,7 +258,8 @@ namespace ir_planner
             this.dataGridView_SelectedCars.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
             this.isOwnedDataGridViewCheckBoxColumn,
-            this.nameDataGridViewTextBoxColumn1});
+            this.nameDataGridViewTextBoxColumn1,
+            this.imageBlobDataGridViewImageColumn});
             this.dataGridView_SelectedCars.DataSource = this.carModelBindingSource;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -272,7 +277,7 @@ namespace ir_planner
             this.dataGridView_SelectedCars.Name = "dataGridView_SelectedCars";
             this.dataGridView_SelectedCars.ReadOnly = true;
             this.dataGridView_SelectedCars.RowHeadersVisible = false;
-            this.dataGridView_SelectedCars.Size = new System.Drawing.Size(327, 518);
+            this.dataGridView_SelectedCars.Size = new System.Drawing.Size(425, 518);
             this.dataGridView_SelectedCars.TabIndex = 0;
             // 
             // groupBox11
@@ -437,7 +442,6 @@ namespace ir_planner
             this.dataGridView_Cars.AllowUserToDeleteRows = false;
             this.dataGridView_Cars.AllowUserToResizeColumns = false;
             this.dataGridView_Cars.AllowUserToResizeRows = false;
-            this.dataGridView_Cars.AutoGenerateColumns = false;
             this.dataGridView_Cars.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Cars.BackgroundColor = System.Drawing.Color.DimGray;
             this.dataGridView_Cars.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -454,7 +458,6 @@ namespace ir_planner
             this.iDDataGridViewTextBoxColumn3,
             this.isOwnedDataGridViewCheckBoxColumn2,
             this.nameDataGridViewTextBoxColumn5});
-            this.dataGridView_Cars.DataSource = this.carModelBindingSource;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -574,9 +577,9 @@ namespace ir_planner
             this.groupBox4.Controls.Add(this.groupBox_Filter_Type);
             this.groupBox4.Controls.Add(this.groupBox_Filter_License);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(1362, 549);
+            this.groupBox4.Location = new System.Drawing.Point(1264, 549);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(333, 347);
+            this.groupBox4.Size = new System.Drawing.Size(431, 347);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
@@ -742,6 +745,31 @@ namespace ir_planner
             this.StatsTab.TabIndex = 1;
             this.StatsTab.Text = "Statistics";
             // 
+            // nameDataGridViewTextBoxColumn5
+            // 
+            this.nameDataGridViewTextBoxColumn5.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn5.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn5.Name = "nameDataGridViewTextBoxColumn5";
+            this.nameDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // isOwnedDataGridViewCheckBoxColumn2
+            // 
+            this.isOwnedDataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isOwnedDataGridViewCheckBoxColumn2.DataPropertyName = "isOwned";
+            this.isOwnedDataGridViewCheckBoxColumn2.HeaderText = "Owned?";
+            this.isOwnedDataGridViewCheckBoxColumn2.Name = "isOwnedDataGridViewCheckBoxColumn2";
+            this.isOwnedDataGridViewCheckBoxColumn2.Width = 63;
+            // 
+            // iDDataGridViewTextBoxColumn3
+            // 
+            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
+            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.iDDataGridViewTextBoxColumn3.Visible = false;
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -900,12 +928,11 @@ namespace ir_planner
             this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
             this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.iDDataGridViewTextBoxColumn1.Visible = false;
             // 
             // isOwnedDataGridViewCheckBoxColumn
             // 
-            this.isOwnedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isOwnedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.isOwnedDataGridViewCheckBoxColumn.DataPropertyName = "isOwned";
             this.isOwnedDataGridViewCheckBoxColumn.HeaderText = "Owned?";
             this.isOwnedDataGridViewCheckBoxColumn.Name = "isOwnedDataGridViewCheckBoxColumn";
@@ -914,40 +941,24 @@ namespace ir_planner
             // 
             // nameDataGridViewTextBoxColumn1
             // 
+            this.nameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
             this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nameDataGridViewTextBoxColumn1.Visible = false;
+            this.nameDataGridViewTextBoxColumn1.Width = 69;
+            // 
+            // imageBlobDataGridViewImageColumn
+            // 
+            this.imageBlobDataGridViewImageColumn.DataPropertyName = "ImageBlob";
+            this.imageBlobDataGridViewImageColumn.HeaderText = "Image";
+            this.imageBlobDataGridViewImageColumn.Name = "imageBlobDataGridViewImageColumn";
+            this.imageBlobDataGridViewImageColumn.ReadOnly = true;
             // 
             // carModelBindingSource
             // 
             this.carModelBindingSource.DataSource = typeof(ir_planner.CarModel);
-            // 
-            // iDDataGridViewTextBoxColumn3
-            // 
-            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
-            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.iDDataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // isOwnedDataGridViewCheckBoxColumn2
-            // 
-            this.isOwnedDataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.isOwnedDataGridViewCheckBoxColumn2.DataPropertyName = "isOwned";
-            this.isOwnedDataGridViewCheckBoxColumn2.HeaderText = "Owned?";
-            this.isOwnedDataGridViewCheckBoxColumn2.Name = "isOwnedDataGridViewCheckBoxColumn2";
-            this.isOwnedDataGridViewCheckBoxColumn2.Width = 63;
-            // 
-            // nameDataGridViewTextBoxColumn5
-            // 
-            this.nameDataGridViewTextBoxColumn5.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn5.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn5.Name = "nameDataGridViewTextBoxColumn5";
-            this.nameDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // iDDataGridViewTextBoxColumn2
             // 
@@ -1032,6 +1043,15 @@ namespace ir_planner
             this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
             this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(173, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "add small colorbar insted of buttons";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1047,6 +1067,7 @@ namespace ir_planner
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Leagues)).EndInit();
             this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SelectedCars)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
@@ -1090,17 +1111,10 @@ namespace ir_planner
         private System.Windows.Forms.DataGridView dataGridView_Cars;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView_Tracks;
-        private System.Windows.Forms.BindingSource carModelBindingSource;
         private System.Windows.Forms.BindingSource trackModelBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage ScheduleTab;
         private System.Windows.Forms.TabPage StatsTab;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
@@ -1144,6 +1158,15 @@ namespace ir_planner
         private System.Windows.Forms.DataGridViewTextBoxColumn week10DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn week11DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn week12DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.BindingSource carModelBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn imageBlobDataGridViewImageColumn;
+        private System.Windows.Forms.Label label2;
     }
 }
 
