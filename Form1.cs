@@ -124,6 +124,12 @@ namespace ir_planner
             dataGridView_SelectedCars.DataSource = leagueCars;
         }
 
+        private void LoadLeagueCarsList()
+        {
+            leagueCars = null;
+            dataGridView_SelectedCars.DataSource = null;
+        }
+
         private void LoadStats()
         {
             mostUsedCars = SQLiteDataAccess.LoadMostUsedCar();
@@ -299,6 +305,8 @@ namespace ir_planner
         private void C_CheckedChanged(object sender, EventArgs e)
         {
             LeagueFilterUpdate();
+            dataGridView_Leagues.ClearSelection();
+            LoadLeagueCarsList();
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)

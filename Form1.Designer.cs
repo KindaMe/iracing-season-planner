@@ -896,7 +896,6 @@ namespace ir_planner
             // 
             // nameDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.Frozen = true;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
@@ -907,7 +906,6 @@ namespace ir_planner
             // 
             // licenseDataGridViewTextBoxColumn
             // 
-            this.licenseDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.licenseDataGridViewTextBoxColumn.DataPropertyName = "License";
             this.licenseDataGridViewTextBoxColumn.Frozen = true;
             this.licenseDataGridViewTextBoxColumn.HeaderText = "License";
@@ -918,7 +916,6 @@ namespace ir_planner
             // 
             // typeDataGridViewTextBoxColumn
             // 
-            this.typeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
             this.typeDataGridViewTextBoxColumn.Frozen = true;
             this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
