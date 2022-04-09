@@ -76,6 +76,22 @@ namespace ir_planner
             this.checkBox_LicenseB = new System.Windows.Forms.CheckBox();
             this.ManageTab = new System.Windows.Forms.TabPage();
             this.StatsTab = new System.Windows.Forms.TabPage();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.licenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week9DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week11DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.week12DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leagueModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isOwnedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -95,22 +111,6 @@ namespace ir_planner
             this.counterDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isOwnedDataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.licenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week9DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week11DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.week12DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Leagues)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -147,7 +147,7 @@ namespace ir_planner
             this.groupBox1.Size = new System.Drawing.Size(1348, 890);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Leagues (Road)";
+            this.groupBox1.Text = "Leagues";
             // 
             // dataGridView_Leagues
             // 
@@ -742,148 +742,6 @@ namespace ir_planner
             this.StatsTab.TabIndex = 1;
             this.StatsTab.Text = "Statistics";
             // 
-            // leagueModelBindingSource
-            // 
-            this.leagueModelBindingSource.DataSource = typeof(ir_planner.LeagueModel);
-            // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.iDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // isOwnedDataGridViewCheckBoxColumn
-            // 
-            this.isOwnedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.isOwnedDataGridViewCheckBoxColumn.DataPropertyName = "isOwned";
-            this.isOwnedDataGridViewCheckBoxColumn.HeaderText = "Owned?";
-            this.isOwnedDataGridViewCheckBoxColumn.Name = "isOwnedDataGridViewCheckBoxColumn";
-            this.isOwnedDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isOwnedDataGridViewCheckBoxColumn.Width = 63;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // carModelBindingSource
-            // 
-            this.carModelBindingSource.DataSource = typeof(ir_planner.CarModel);
-            // 
-            // iDDataGridViewTextBoxColumn3
-            // 
-            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
-            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.iDDataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // isOwnedDataGridViewCheckBoxColumn2
-            // 
-            this.isOwnedDataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.isOwnedDataGridViewCheckBoxColumn2.DataPropertyName = "isOwned";
-            this.isOwnedDataGridViewCheckBoxColumn2.HeaderText = "Owned?";
-            this.isOwnedDataGridViewCheckBoxColumn2.Name = "isOwnedDataGridViewCheckBoxColumn2";
-            this.isOwnedDataGridViewCheckBoxColumn2.Width = 63;
-            // 
-            // nameDataGridViewTextBoxColumn5
-            // 
-            this.nameDataGridViewTextBoxColumn5.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn5.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn5.Name = "nameDataGridViewTextBoxColumn5";
-            this.nameDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // iDDataGridViewTextBoxColumn2
-            // 
-            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
-            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.iDDataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // isOwnedDataGridViewCheckBoxColumn1
-            // 
-            this.isOwnedDataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.isOwnedDataGridViewCheckBoxColumn1.DataPropertyName = "isOwned";
-            this.isOwnedDataGridViewCheckBoxColumn1.HeaderText = "Owned?";
-            this.isOwnedDataGridViewCheckBoxColumn1.Name = "isOwnedDataGridViewCheckBoxColumn1";
-            this.isOwnedDataGridViewCheckBoxColumn1.Width = 63;
-            // 
-            // nameDataGridViewTextBoxColumn4
-            // 
-            this.nameDataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn4.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
-            this.nameDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // trackModelBindingSource
-            // 
-            this.trackModelBindingSource.DataSource = typeof(ir_planner.TrackModel);
-            // 
-            // counterDataGridViewTextBoxColumn
-            // 
-            this.counterDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.counterDataGridViewTextBoxColumn.DataPropertyName = "Counter";
-            this.counterDataGridViewTextBoxColumn.HeaderText = "";
-            this.counterDataGridViewTextBoxColumn.Name = "counterDataGridViewTextBoxColumn";
-            this.counterDataGridViewTextBoxColumn.ReadOnly = true;
-            this.counterDataGridViewTextBoxColumn.Width = 18;
-            // 
-            // isOwnedDataGridViewCheckBoxColumn3
-            // 
-            this.isOwnedDataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.isOwnedDataGridViewCheckBoxColumn3.DataPropertyName = "IsOwned";
-            this.isOwnedDataGridViewCheckBoxColumn3.HeaderText = "Owned?";
-            this.isOwnedDataGridViewCheckBoxColumn3.Name = "isOwnedDataGridViewCheckBoxColumn3";
-            this.isOwnedDataGridViewCheckBoxColumn3.ReadOnly = true;
-            this.isOwnedDataGridViewCheckBoxColumn3.Width = 63;
-            // 
-            // nameDataGridViewTextBoxColumn2
-            // 
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // statsModelBindingSource
-            // 
-            this.statsModelBindingSource.DataSource = typeof(ir_planner.StatsModel);
-            // 
-            // counterDataGridViewTextBoxColumn1
-            // 
-            this.counterDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.counterDataGridViewTextBoxColumn1.DataPropertyName = "Counter";
-            this.counterDataGridViewTextBoxColumn1.HeaderText = "";
-            this.counterDataGridViewTextBoxColumn1.Name = "counterDataGridViewTextBoxColumn1";
-            this.counterDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.counterDataGridViewTextBoxColumn1.Width = 18;
-            // 
-            // isOwnedDataGridViewCheckBoxColumn4
-            // 
-            this.isOwnedDataGridViewCheckBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.isOwnedDataGridViewCheckBoxColumn4.DataPropertyName = "IsOwned";
-            this.isOwnedDataGridViewCheckBoxColumn4.HeaderText = "Owned?";
-            this.isOwnedDataGridViewCheckBoxColumn4.Name = "isOwnedDataGridViewCheckBoxColumn4";
-            this.isOwnedDataGridViewCheckBoxColumn4.ReadOnly = true;
-            this.isOwnedDataGridViewCheckBoxColumn4.Width = 63;
-            // 
-            // nameDataGridViewTextBoxColumn3
-            // 
-            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn3.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
-            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -1032,6 +890,148 @@ namespace ir_planner
             this.week12DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.week12DataGridViewTextBoxColumn.Width = 83;
             // 
+            // leagueModelBindingSource
+            // 
+            this.leagueModelBindingSource.DataSource = typeof(ir_planner.LeagueModel);
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.iDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // isOwnedDataGridViewCheckBoxColumn
+            // 
+            this.isOwnedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isOwnedDataGridViewCheckBoxColumn.DataPropertyName = "isOwned";
+            this.isOwnedDataGridViewCheckBoxColumn.HeaderText = "Owned?";
+            this.isOwnedDataGridViewCheckBoxColumn.Name = "isOwnedDataGridViewCheckBoxColumn";
+            this.isOwnedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isOwnedDataGridViewCheckBoxColumn.Width = 63;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // carModelBindingSource
+            // 
+            this.carModelBindingSource.DataSource = typeof(ir_planner.CarModel);
+            // 
+            // iDDataGridViewTextBoxColumn3
+            // 
+            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
+            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.iDDataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // isOwnedDataGridViewCheckBoxColumn2
+            // 
+            this.isOwnedDataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isOwnedDataGridViewCheckBoxColumn2.DataPropertyName = "isOwned";
+            this.isOwnedDataGridViewCheckBoxColumn2.HeaderText = "Owned?";
+            this.isOwnedDataGridViewCheckBoxColumn2.Name = "isOwnedDataGridViewCheckBoxColumn2";
+            this.isOwnedDataGridViewCheckBoxColumn2.Width = 63;
+            // 
+            // nameDataGridViewTextBoxColumn5
+            // 
+            this.nameDataGridViewTextBoxColumn5.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn5.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn5.Name = "nameDataGridViewTextBoxColumn5";
+            this.nameDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.iDDataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // isOwnedDataGridViewCheckBoxColumn1
+            // 
+            this.isOwnedDataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isOwnedDataGridViewCheckBoxColumn1.DataPropertyName = "isOwned";
+            this.isOwnedDataGridViewCheckBoxColumn1.HeaderText = "Owned?";
+            this.isOwnedDataGridViewCheckBoxColumn1.Name = "isOwnedDataGridViewCheckBoxColumn1";
+            this.isOwnedDataGridViewCheckBoxColumn1.Width = 63;
+            // 
+            // nameDataGridViewTextBoxColumn4
+            // 
+            this.nameDataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn4.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
+            this.nameDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // trackModelBindingSource
+            // 
+            this.trackModelBindingSource.DataSource = typeof(ir_planner.TrackModel);
+            // 
+            // counterDataGridViewTextBoxColumn
+            // 
+            this.counterDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.counterDataGridViewTextBoxColumn.DataPropertyName = "Counter";
+            this.counterDataGridViewTextBoxColumn.HeaderText = "";
+            this.counterDataGridViewTextBoxColumn.Name = "counterDataGridViewTextBoxColumn";
+            this.counterDataGridViewTextBoxColumn.ReadOnly = true;
+            this.counterDataGridViewTextBoxColumn.Width = 18;
+            // 
+            // isOwnedDataGridViewCheckBoxColumn3
+            // 
+            this.isOwnedDataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isOwnedDataGridViewCheckBoxColumn3.DataPropertyName = "IsOwned";
+            this.isOwnedDataGridViewCheckBoxColumn3.HeaderText = "Owned?";
+            this.isOwnedDataGridViewCheckBoxColumn3.Name = "isOwnedDataGridViewCheckBoxColumn3";
+            this.isOwnedDataGridViewCheckBoxColumn3.ReadOnly = true;
+            this.isOwnedDataGridViewCheckBoxColumn3.Width = 63;
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // statsModelBindingSource
+            // 
+            this.statsModelBindingSource.DataSource = typeof(ir_planner.StatsModel);
+            // 
+            // counterDataGridViewTextBoxColumn1
+            // 
+            this.counterDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.counterDataGridViewTextBoxColumn1.DataPropertyName = "Counter";
+            this.counterDataGridViewTextBoxColumn1.HeaderText = "";
+            this.counterDataGridViewTextBoxColumn1.Name = "counterDataGridViewTextBoxColumn1";
+            this.counterDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.counterDataGridViewTextBoxColumn1.Width = 18;
+            // 
+            // isOwnedDataGridViewCheckBoxColumn4
+            // 
+            this.isOwnedDataGridViewCheckBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.isOwnedDataGridViewCheckBoxColumn4.DataPropertyName = "IsOwned";
+            this.isOwnedDataGridViewCheckBoxColumn4.HeaderText = "Owned?";
+            this.isOwnedDataGridViewCheckBoxColumn4.Name = "isOwnedDataGridViewCheckBoxColumn4";
+            this.isOwnedDataGridViewCheckBoxColumn4.ReadOnly = true;
+            this.isOwnedDataGridViewCheckBoxColumn4.Width = 63;
+            // 
+            // nameDataGridViewTextBoxColumn3
+            // 
+            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
+            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1040,6 +1040,7 @@ namespace ir_planner
             this.ClientSize = new System.Drawing.Size(1712, 933);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iRacing Season Planner";
