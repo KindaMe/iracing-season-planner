@@ -67,6 +67,7 @@
     <Compile Include="Models\LeagueModel.cs" />
     <Compile Include="Models\StatsModel.cs" />
     <Compile Include="Models\TrackModel.cs" />
+    <Compile Include="Models\UserSettingsModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -13,26 +13,31 @@ namespace ir_planner
 {
     public partial class Form1 : Form
     {
+        private UserSettingsModel userSettings = new UserSettingsModel();
+
         private List<CarModel> cars = new List<CarModel>();
         private List<TrackModel> tracks = new List<TrackModel>();
         private List<LeagueModel> leagues = new List<LeagueModel>();
         private List<CarModel> leagueCars = new List<CarModel>();
         private int currentLeagueRowSelected = 0;
 
+        //Stat lists
         private List<StatsModel> mostUsedCars = new List<StatsModel>();
+
         private List<StatsModel> mostUsedTracks = new List<StatsModel>();
+        private List<StatsModel> bestValueCars = new List<StatsModel>();
+        private List<StatsModel> bestValueTracks = new List<StatsModel>();
 
         public Form1()
         {
             InitializeComponent();
+            LoadUserSettings();
             LoadCarList();
             LoadTrackList();
             LoadLeaguesList();
-            LoadLeagueCarsList(leagues[currentLeagueRowSelected]);
 
             groupBox_Filter_License.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
             groupBox_Filter_Type.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
-            LoadStats();
         }
 
         private void UpdateLeagueColors()
@@ -100,6 +105,33 @@ namespace ir_planner
             dataGridView_Leagues.Refresh();
         }
 
+        private void LoadUserSettings()
+        {
+            userSettings = SQLiteDataAccess.LoadUserSettings();
+            checkBox_LicenseA.Checked = userSettings.FILTER_CLASS_A;
+            checkBox_LicenseB.Checked = userSettings.FILTER_CLASS_B;
+            checkBox_LicenseC.Checked = userSettings.FILTER_CLASS_C;
+            checkBox_LicenseD.Checked = userSettings.FILTER_CLASS_D;
+            checkBox_LicenseR.Checked = userSettings.FILTER_CLASS_R;
+            checkBox_TypeRoad.Checked = userSettings.FILTER_TYPE_ROAD;
+            checkBox_TypeOval.Checked = userSettings.FILTER_TYPE_OVAL;
+            checkBox_TypeRoadDirt.Checked = userSettings.FILTER_TYPE_ROAD_DIRT;
+            checkBox_TypeOvalDirt.Checked = userSettings.FILTER_TYPE_OVAL_DIRT;
+        }
+
+        private void UpdateUserSettings()
+        {
+            userSettings.FILTER_CLASS_A = checkBox_LicenseA.Checked;
+            userSettings.FILTER_CLASS_B = checkBox_LicenseB.Checked;
+            userSettings.FILTER_CLASS_C = checkBox_LicenseC.Checked;
+            userSettings.FILTER_CLASS_D = checkBox_LicenseD.Checked;
+            userSettings.FILTER_CLASS_R = checkBox_LicenseR.Checked;
+            userSettings.FILTER_TYPE_ROAD = checkBox_TypeRoad.Checked;
+            userSettings.FILTER_TYPE_OVAL = checkBox_TypeOval.Checked;
+            userSettings.FILTER_TYPE_ROAD_DIRT = checkBox_TypeRoadDirt.Checked;
+            userSettings.FILTER_TYPE_OVAL_DIRT = checkBox_TypeOvalDirt.Checked;
+        }
+
         private void LoadCarList()
         {
             cars = SQLiteDataAccess.LoadCars();
@@ -122,6 +154,24 @@ namespace ir_planner
         {
             leagueCars = SQLiteDataAccess.LoadLeagueCars(league);
             dataGridView_SelectedCars.DataSource = leagueCars;
+
+            foreach (DataGridViewRow row in dataGridView_SelectedCars.Rows)
+            {
+                if ((bool)row.Cells[1].Value == true)
+                {
+                    row.Cells[2].Style.BackColor = Color.LightGreen;
+                    row.Cells[2].Style.ForeColor = Color.Black;
+                    row.Cells[2].Style.SelectionBackColor = Color.LightGreen;
+                    row.Cells[2].Style.SelectionForeColor = Color.Black;
+                }
+                else
+                {
+                    row.Cells[2].Style.BackColor = Color.IndianRed;
+                    row.Cells[2].Style.ForeColor = Color.Black;
+                    row.Cells[2].Style.SelectionBackColor = Color.IndianRed;
+                    row.Cells[2].Style.SelectionForeColor = Color.Black;
+                }
+            }
         }
 
         private void LoadLeagueCarsList()
@@ -137,6 +187,12 @@ namespace ir_planner
 
             mostUsedTracks = SQLiteDataAccess.LoadMostUsedTrack();
             dataGridView2.DataSource = mostUsedTracks;
+
+            bestValueTracks = GetBestValueTrack();
+            dataGridView3.DataSource = bestValueTracks;
+
+            bestValueCars = GetBestValueCar();
+            dataGridView4.DataSource = bestValueCars;
         }
 
         private void dataGridView_Leagues_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -152,12 +208,7 @@ namespace ir_planner
         {
             UpdateLeagueColors();
 
-            typeof(DataGridView).InvokeMember(
-   "DoubleBuffered",
-   BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
-   null,
-   dataGridView_Leagues,
-   new object[] { true });
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, null, dataGridView_Leagues, new object[] { true });
         }
 
         private void dataGridView_Tracks_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -173,7 +224,6 @@ namespace ir_planner
             if (e.RowIndex != -1)
             {
                 SQLiteDataAccess.UpdateTrackInDB(tracks[e.RowIndex]);
-                LoadStats();
             }
         }
 
@@ -191,7 +241,6 @@ namespace ir_planner
             {
                 SQLiteDataAccess.UpdateCarInDB(cars[e.RowIndex]);
                 LoadLeagueCarsList(leagues[currentLeagueRowSelected]);
-                LoadStats();
             }
         }
 
@@ -304,6 +353,14 @@ namespace ir_planner
 
         private void C_CheckedChanged(object sender, EventArgs e)
         {
+            RefreshLeagueFilters();
+
+            UpdateUserSettings();
+            SQLiteDataAccess.UpdateUserSettings(userSettings);
+        }
+
+        private void RefreshLeagueFilters()
+        {
             LeagueFilterUpdate();
             dataGridView_Leagues.ClearSelection();
             LoadLeagueCarsList();
@@ -315,6 +372,116 @@ namespace ir_planner
             {
                 UpdateLeagueColors();
             }
+            else if (e.TabPage.Text == "Statistics")
+            {
+                LoadStats();
+            }
+        }
+
+        //STATS TAB
+        private List<StatsModel> GetBestValueCar()
+        {
+            List<StatsModel> statsModels = new List<StatsModel>();
+
+            foreach (DataGridViewRow row in dataGridView_Leagues.Rows)
+            {
+                List<CarModel> CarsInLeague = SQLiteDataAccess.LoadLeagueCars(leagues[row.Index]);
+                int ownedCarsCount = 0;
+
+                for (int i = 0; i < CarsInLeague.Count; i++)
+                {
+                    if (CarsInLeague[i].isOwned == true)
+                    {
+                        ownedCarsCount++;
+                    }
+                }
+
+                if (ownedCarsCount == 0)
+                {
+                    foreach (CarModel car in CarsInLeague)
+                    {
+                        if (statsModels.Exists(x => x.Name == car.Name))
+                        {
+                            statsModels.Find(x => x.Name == car.Name).Counter++;
+                        }
+                        else
+                        {
+                            StatsModel tempModel = new StatsModel
+                            {
+                                Counter = 1,
+                                Name = car.Name
+                            };
+                            statsModels.Add(tempModel);
+                        }
+                    }
+                }
+            }
+            statsModels.Sort((x, y) => y.Counter.CompareTo(x.Counter));
+
+            //foreach (StatsModel obj in statsModels)
+            //{
+            //    MessageBox.Show(obj.Name + ": " + obj.Counter);
+            //}
+
+            return statsModels;
+        }
+
+        private List<StatsModel> GetBestValueTrack()
+        {
+            //unlocks most races you were missing only track for
+
+            List<StatsModel> statsModels = new List<StatsModel>();
+
+            foreach (DataGridViewRow row in dataGridView_Leagues.Rows)
+            {
+                List<CarModel> CarsInLeague = SQLiteDataAccess.LoadLeagueCars(leagues[row.Index]);
+                int ownedCarsCount = 0;
+
+                for (int i = 0; i < CarsInLeague.Count; i++)
+                {
+                    if (CarsInLeague[i].isOwned == true)
+                    {
+                        ownedCarsCount++;
+                    }
+                }
+
+                if (ownedCarsCount > 0)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.ColumnIndex > 3 && cell.Value != null)
+                        {
+                            bool isTrackOwned = SQLiteDataAccess.IsTrackOwned(cell.Value.ToString());
+
+                            if (isTrackOwned == false)
+                            {
+                                if (statsModels.Exists(x => x.Name == cell.Value.ToString()))
+                                {
+                                    statsModels.Find(x => x.Name == cell.Value.ToString()).Counter++;
+                                }
+                                else
+                                {
+                                    StatsModel tempModel = new StatsModel
+                                    {
+                                        Counter = 1,
+                                        Name = cell.Value.ToString()
+                                    };
+                                    statsModels.Add(tempModel);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            statsModels.Sort((x, y) => y.Counter.CompareTo(x.Counter));
+
+            return statsModels;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            RefreshLeagueFilters();
         }
     }
 }

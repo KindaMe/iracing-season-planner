@@ -12,6 +12,16 @@ namespace ir_planner
 {
     internal class SQLiteDataAccess
     {
+        public static UserSettingsModel LoadUserSettings()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<UserSettingsModel>("select * from UserSettings", new DynamicParameters());
+
+                return output.First();
+            }
+        }
+
         public static List<CarModel> LoadCars()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -43,7 +53,7 @@ namespace ir_planner
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<CarModel>("SELECT * FROM Cars_Leagues INNER JOIN Cars ON Car_ID = Cars.ID WHERE League_ID = @ID ORDER BY Name", league);
+                var output = cnn.Query<CarModel>("SELECT * FROM Cars_Leagues INNER JOIN Cars ON Car_ID = Cars.ID WHERE League_ID = @ID ORDER BY isOwned DESC,Name", league);
                 return output.ToList();
             }
         }
@@ -75,6 +85,23 @@ namespace ir_planner
                 var output = cnn.Query<TrackModel>("select * from Tracks where Name = @Name", tempTrack);
                 List<TrackModel> temp = output.ToList();
                 return temp[0].isOwned;
+            }
+        }
+
+        public static void UpdateUserSettings(UserSettingsModel userSettings)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("UPDATE UserSettings SET " +
+                    "FILTER_CLASS_A = @FILTER_CLASS_A," +
+                    "FILTER_CLASS_B = @FILTER_CLASS_B," +
+                    "FILTER_CLASS_C = @FILTER_CLASS_C," +
+                    "FILTER_CLASS_D = @FILTER_CLASS_D," +
+                    "FILTER_CLASS_R = @FILTER_CLASS_R," +
+                    "FILTER_TYPE_ROAD = @FILTER_TYPE_ROAD," +
+                    "FILTER_TYPE_OVAL = @FILTER_TYPE_OVAL," +
+                    "FILTER_TYPE_ROAD_DIRT = @FILTER_TYPE_ROAD_DIRT," +
+                    "FILTER_TYPE_OVAL_DIRT = @FILTER_TYPE_OVAL_DIRT WHERE ID = @ID", userSettings);
             }
         }
 
