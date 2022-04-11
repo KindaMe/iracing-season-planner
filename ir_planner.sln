@@ -5,16 +5,28 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir_planner", "ir_planner.csproj", "{02DD101F-32C9-4C52-9F63-3823A45825F5}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "..\Setup1\Setup1.vdproj", "{02AF4E38-A6E3-4FEB-B4A0-2D25E1D5E63B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{02DD101F-32C9-4C52-9F63-3823A45825F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{02DD101F-32C9-4C52-9F63-3823A45825F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02DD101F-32C9-4C52-9F63-3823A45825F5}.Debug|x86.ActiveCfg = Release|x86
+		{02DD101F-32C9-4C52-9F63-3823A45825F5}.Debug|x86.Build.0 = Release|x86
 		{02DD101F-32C9-4C52-9F63-3823A45825F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02DD101F-32C9-4C52-9F63-3823A45825F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02DD101F-32C9-4C52-9F63-3823A45825F5}.Release|x86.ActiveCfg = Release|x86
+		{02DD101F-32C9-4C52-9F63-3823A45825F5}.Release|x86.Build.0 = Release|x86
+		{02AF4E38-A6E3-4FEB-B4A0-2D25E1D5E63B}.Debug|Any CPU.ActiveCfg = Debug
+		{02AF4E38-A6E3-4FEB-B4A0-2D25E1D5E63B}.Debug|x86.ActiveCfg = Debug
+		{02AF4E38-A6E3-4FEB-B4A0-2D25E1D5E63B}.Release|Any CPU.ActiveCfg = Release
+		{02AF4E38-A6E3-4FEB-B4A0-2D25E1D5E63B}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
