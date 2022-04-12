@@ -67,6 +67,7 @@ namespace ir_planner
             this.dataGridView_Tracks = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ScheduleTab = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox_Filter_Type = new System.Windows.Forms.GroupBox();
             this.checkBox_TypeOvalDirt = new System.Windows.Forms.CheckBox();
@@ -80,15 +81,16 @@ namespace ir_planner
             this.checkBox_LicenseA = new System.Windows.Forms.CheckBox();
             this.checkBox_LicenseB = new System.Windows.Forms.CheckBox();
             this.ManageTab = new System.Windows.Forms.TabPage();
-            this.StatsTab = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.StatsTab = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Filter_Available = new System.Windows.Forms.GroupBox();
+            this.checkBox_OnlyAvailable = new System.Windows.Forms.CheckBox();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,14 +151,15 @@ namespace ir_planner
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tracks)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.ScheduleTab.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox_Filter_Type.SuspendLayout();
             this.groupBox_Filter_License.SuspendLayout();
             this.ManageTab.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.StatsTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox_Filter_Available.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leagueModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackModelBindingSource)).BeginInit();
@@ -682,8 +685,26 @@ namespace ir_planner
             this.ScheduleTab.TabIndex = 0;
             this.ScheduleTab.Text = "Schedule";
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox4, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox7, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1250, 646);
+            this.tableLayoutPanel3.TabIndex = 10;
+            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.groupBox_Filter_Available);
             this.groupBox4.Controls.Add(this.groupBox_Filter_Type);
             this.groupBox4.Controls.Add(this.groupBox_Filter_License);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -843,6 +864,38 @@ namespace ir_planner
             this.ManageTab.TabIndex = 2;
             this.ManageTab.Text = "Manage";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox10, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 646F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 646F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1250, 646);
+            this.tableLayoutPanel2.TabIndex = 12;
+            // 
+            // groupBox10
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.groupBox10, 2);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox10.ForeColor = System.Drawing.Color.Red;
+            this.groupBox10.Location = new System.Drawing.Point(627, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(620, 640);
+            this.groupBox10.TabIndex = 12;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "placeholder";
+            // 
             // StatsTab
             // 
             this.StatsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -878,59 +931,16 @@ namespace ir_planner
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1250, 646);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // tableLayoutPanel2
+            // groupBox14
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox10, 2, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 646F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 646F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1250, 646);
-            this.tableLayoutPanel2.TabIndex = 12;
-            // 
-            // groupBox10
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.groupBox10, 2);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox10.ForeColor = System.Drawing.Color.Red;
-            this.groupBox10.Location = new System.Drawing.Point(627, 3);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(620, 640);
-            this.groupBox10.TabIndex = 12;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "placeholder";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox11.ForeColor = System.Drawing.Color.Red;
-            this.groupBox11.Location = new System.Drawing.Point(627, 3);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(306, 317);
-            this.groupBox11.TabIndex = 5;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "placeholder";
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox12.ForeColor = System.Drawing.Color.Red;
-            this.groupBox12.Location = new System.Drawing.Point(939, 3);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(308, 317);
-            this.groupBox12.TabIndex = 6;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "placeholder";
+            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox14.ForeColor = System.Drawing.Color.Red;
+            this.groupBox14.Location = new System.Drawing.Point(939, 326);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(308, 317);
+            this.groupBox14.TabIndex = 8;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "placeholder";
             // 
             // groupBox13
             // 
@@ -943,33 +953,48 @@ namespace ir_planner
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "placeholder";
             // 
-            // groupBox14
+            // groupBox12
             // 
-            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox14.ForeColor = System.Drawing.Color.Red;
-            this.groupBox14.Location = new System.Drawing.Point(939, 326);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(308, 317);
-            this.groupBox14.TabIndex = 8;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "placeholder";
+            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox12.ForeColor = System.Drawing.Color.Red;
+            this.groupBox12.Location = new System.Drawing.Point(939, 3);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(308, 317);
+            this.groupBox12.TabIndex = 6;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "placeholder";
             // 
-            // tableLayoutPanel3
+            // groupBox11
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.groupBox4, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.groupBox7, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1250, 646);
-            this.tableLayoutPanel3.TabIndex = 10;
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox11.ForeColor = System.Drawing.Color.Red;
+            this.groupBox11.Location = new System.Drawing.Point(627, 3);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(306, 317);
+            this.groupBox11.TabIndex = 5;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "placeholder";
+            // 
+            // groupBox_Filter_Available
+            // 
+            this.groupBox_Filter_Available.Controls.Add(this.checkBox_OnlyAvailable);
+            this.groupBox_Filter_Available.ForeColor = System.Drawing.Color.White;
+            this.groupBox_Filter_Available.Location = new System.Drawing.Point(119, 19);
+            this.groupBox_Filter_Available.Name = "groupBox_Filter_Available";
+            this.groupBox_Filter_Available.Size = new System.Drawing.Size(107, 44);
+            this.groupBox_Filter_Available.TabIndex = 7;
+            this.groupBox_Filter_Available.TabStop = false;
+            this.groupBox_Filter_Available.Text = "Available";
+            // 
+            // checkBox_OnlyAvailable
+            // 
+            this.checkBox_OnlyAvailable.AutoSize = true;
+            this.checkBox_OnlyAvailable.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_OnlyAvailable.Name = "checkBox_OnlyAvailable";
+            this.checkBox_OnlyAvailable.Size = new System.Drawing.Size(93, 17);
+            this.checkBox_OnlyAvailable.TabIndex = 3;
+            this.checkBox_OnlyAvailable.Text = "Only Available";
+            this.checkBox_OnlyAvailable.UseVisualStyleBackColor = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -1354,16 +1379,18 @@ namespace ir_planner
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tracks)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ScheduleTab.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox_Filter_Type.ResumeLayout(false);
             this.groupBox_Filter_Type.PerformLayout();
             this.groupBox_Filter_License.ResumeLayout(false);
             this.groupBox_Filter_License.PerformLayout();
             this.ManageTab.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.StatsTab.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox_Filter_Available.ResumeLayout(false);
+            this.groupBox_Filter_Available.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leagueModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackModelBindingSource)).EndInit();
@@ -1456,6 +1483,8 @@ namespace ir_planner
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox_Filter_Available;
+        private System.Windows.Forms.CheckBox checkBox_OnlyAvailable;
     }
 }
 

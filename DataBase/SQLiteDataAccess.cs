@@ -101,7 +101,8 @@ namespace ir_planner
                     "FILTER_TYPE_ROAD = @FILTER_TYPE_ROAD," +
                     "FILTER_TYPE_OVAL = @FILTER_TYPE_OVAL," +
                     "FILTER_TYPE_ROAD_DIRT = @FILTER_TYPE_ROAD_DIRT," +
-                    "FILTER_TYPE_OVAL_DIRT = @FILTER_TYPE_OVAL_DIRT WHERE ID = @ID", userSettings);
+                    "FILTER_TYPE_OVAL_DIRT = @FILTER_TYPE_OVAL_DIRT," +
+                    "FILTER_AVAILABLE_ONLY = @FILTER_AVAILABLE_ONLY WHERE ID = @ID", userSettings);
             }
         }
 

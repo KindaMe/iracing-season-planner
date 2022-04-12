@@ -38,6 +38,7 @@ namespace ir_planner
 
             groupBox_Filter_License.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
             groupBox_Filter_Type.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
+            groupBox_Filter_Available.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
         }
 
         private void UpdateLeagueColors()
@@ -117,6 +118,7 @@ namespace ir_planner
             checkBox_TypeOval.Checked = userSettings.FILTER_TYPE_OVAL;
             checkBox_TypeRoadDirt.Checked = userSettings.FILTER_TYPE_ROAD_DIRT;
             checkBox_TypeOvalDirt.Checked = userSettings.FILTER_TYPE_OVAL_DIRT;
+            checkBox_OnlyAvailable.Checked = userSettings.FILTER_AVAILABLE_ONLY;
         }
 
         private void UpdateUserSettings()
@@ -130,6 +132,7 @@ namespace ir_planner
             userSettings.FILTER_TYPE_OVAL = checkBox_TypeOval.Checked;
             userSettings.FILTER_TYPE_ROAD_DIRT = checkBox_TypeRoadDirt.Checked;
             userSettings.FILTER_TYPE_OVAL_DIRT = checkBox_TypeOvalDirt.Checked;
+            userSettings.FILTER_AVAILABLE_ONLY = checkBox_OnlyAvailable.Checked;
         }
 
         private void LoadCarList()
@@ -256,7 +259,7 @@ namespace ir_planner
 
             for (int u = 0; u < dataGridView_Leagues.RowCount; u++)
             {
-                if (FilterChecker(dataGridView_Leagues.Rows[u].Cells[2].Value.ToString(), dataGridView_Leagues.Rows[u].Cells[3].Value.ToString()))
+                if (FilterChecker(dataGridView_Leagues.Rows[u].Cells[2].Value.ToString(), dataGridView_Leagues.Rows[u].Cells[3].Value.ToString(), dataGridView_Leagues.Rows[u].Cells[1].Style.BackColor == Color.LightGreen))
                 {
                     dataGridView_Leagues.Rows[u].Visible = true;
                 }
@@ -269,8 +272,13 @@ namespace ir_planner
             currencyManager.ResumeBinding();
         }
 
-        private bool FilterChecker(string LicenseToCheck, string LeagueTypeToCheck)
+        private bool FilterChecker(string LicenseToCheck, string LeagueTypeToCheck, bool Available)
         {
+            if (checkBox_OnlyAvailable.Checked == true && Available == false)
+            {
+                return false;
+            }
+
             switch (LicenseToCheck)
             {
                 case "A":
@@ -371,6 +379,7 @@ namespace ir_planner
             if (e.TabPage.Text == "Schedule")
             {
                 UpdateLeagueColors();
+                RefreshLeagueFilters();
             }
             else if (e.TabPage.Text == "Statistics")
             {

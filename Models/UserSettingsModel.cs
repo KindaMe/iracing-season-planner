@@ -18,5 +18,6 @@ namespace ir_planner
         public bool FILTER_TYPE_OVAL { get; set; }
         public bool FILTER_TYPE_ROAD_DIRT { get; set; }
         public bool FILTER_TYPE_OVAL_DIRT { get; set; }
+        public bool FILTER_AVAILABLE_ONLY { get; set; }
     }
 }
