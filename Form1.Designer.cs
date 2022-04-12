@@ -69,6 +69,8 @@ namespace ir_planner
             this.ScheduleTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Filter_Available = new System.Windows.Forms.GroupBox();
+            this.checkBox_OnlyAvailable = new System.Windows.Forms.CheckBox();
             this.groupBox_Filter_Type = new System.Windows.Forms.GroupBox();
             this.checkBox_TypeOvalDirt = new System.Windows.Forms.CheckBox();
             this.checkBox_TypeRoadDirt = new System.Windows.Forms.CheckBox();
@@ -82,15 +84,16 @@ namespace ir_planner
             this.checkBox_LicenseB = new System.Windows.Forms.CheckBox();
             this.ManageTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.StatsTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.groupBox_Filter_Available = new System.Windows.Forms.GroupBox();
-            this.checkBox_OnlyAvailable = new System.Windows.Forms.CheckBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.Label_Manage_Name = new System.Windows.Forms.Label();
+            this.Label_Manage_Type = new System.Windows.Forms.Label();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.licenseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,13 +156,15 @@ namespace ir_planner
             this.ScheduleTab.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox_Filter_Available.SuspendLayout();
             this.groupBox_Filter_Type.SuspendLayout();
             this.groupBox_Filter_License.SuspendLayout();
             this.ManageTab.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.StatsTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox_Filter_Available.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leagueModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackModelBindingSource)).BeginInit();
@@ -541,9 +546,9 @@ namespace ir_planner
             this.groupBox2.Controls.Add(this.dataGridView_Cars);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(315, 3);
+            this.groupBox2.Location = new System.Drawing.Point(878, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(306, 640);
+            this.groupBox2.Size = new System.Drawing.Size(369, 640);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Select Your Cars";
@@ -601,10 +606,12 @@ namespace ir_planner
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView_Cars.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView_Cars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Cars.Size = new System.Drawing.Size(300, 621);
+            this.dataGridView_Cars.Size = new System.Drawing.Size(363, 621);
             this.dataGridView_Cars.TabIndex = 0;
             this.dataGridView_Cars.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cars_CellValueChanged);
             this.dataGridView_Cars.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridView_Cars_CurrentCellDirtyStateChanged);
+            this.dataGridView_Cars.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView_Cars_DataBindingComplete);
+            this.dataGridView_Cars.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cars_RowEnter);
             // 
             // groupBox3
             // 
@@ -613,7 +620,8 @@ namespace ir_planner
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(306, 640);
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox3.Size = new System.Drawing.Size(369, 640);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Select Your Tracks";
@@ -655,10 +663,12 @@ namespace ir_planner
             dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView_Tracks.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView_Tracks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Tracks.Size = new System.Drawing.Size(300, 621);
+            this.dataGridView_Tracks.Size = new System.Drawing.Size(363, 621);
             this.dataGridView_Tracks.TabIndex = 1;
             this.dataGridView_Tracks.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tracks_CellValueChanged);
             this.dataGridView_Tracks.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridView_Tracks_CurrentCellDirtyStateChanged);
+            this.dataGridView_Tracks.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView_Tracks_DataBindingComplete);
+            this.dataGridView_Tracks.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tracks_RowEnter);
             // 
             // tabControl1
             // 
@@ -715,6 +725,27 @@ namespace ir_planner
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
+            // 
+            // groupBox_Filter_Available
+            // 
+            this.groupBox_Filter_Available.Controls.Add(this.checkBox_OnlyAvailable);
+            this.groupBox_Filter_Available.ForeColor = System.Drawing.Color.White;
+            this.groupBox_Filter_Available.Location = new System.Drawing.Point(119, 19);
+            this.groupBox_Filter_Available.Name = "groupBox_Filter_Available";
+            this.groupBox_Filter_Available.Size = new System.Drawing.Size(107, 44);
+            this.groupBox_Filter_Available.TabIndex = 7;
+            this.groupBox_Filter_Available.TabStop = false;
+            this.groupBox_Filter_Available.Text = "Available";
+            // 
+            // checkBox_OnlyAvailable
+            // 
+            this.checkBox_OnlyAvailable.AutoSize = true;
+            this.checkBox_OnlyAvailable.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_OnlyAvailable.Name = "checkBox_OnlyAvailable";
+            this.checkBox_OnlyAvailable.Size = new System.Drawing.Size(93, 17);
+            this.checkBox_OnlyAvailable.TabIndex = 3;
+            this.checkBox_OnlyAvailable.Text = "Only Available";
+            this.checkBox_OnlyAvailable.UseVisualStyleBackColor = true;
             // 
             // groupBox_Filter_Type
             // 
@@ -866,35 +897,20 @@ namespace ir_planner
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupBox3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox10, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox10, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 646F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 646F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1250, 646);
             this.tableLayoutPanel2.TabIndex = 12;
-            // 
-            // groupBox10
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.groupBox10, 2);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox10.ForeColor = System.Drawing.Color.Red;
-            this.groupBox10.Location = new System.Drawing.Point(627, 3);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(620, 640);
-            this.groupBox10.TabIndex = 12;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "placeholder";
             // 
             // StatsTab
             // 
@@ -975,26 +991,63 @@ namespace ir_planner
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "placeholder";
             // 
-            // groupBox_Filter_Available
+            // groupBox10
             // 
-            this.groupBox_Filter_Available.Controls.Add(this.checkBox_OnlyAvailable);
-            this.groupBox_Filter_Available.ForeColor = System.Drawing.Color.White;
-            this.groupBox_Filter_Available.Location = new System.Drawing.Point(119, 19);
-            this.groupBox_Filter_Available.Name = "groupBox_Filter_Available";
-            this.groupBox_Filter_Available.Size = new System.Drawing.Size(107, 44);
-            this.groupBox_Filter_Available.TabIndex = 7;
-            this.groupBox_Filter_Available.TabStop = false;
-            this.groupBox_Filter_Available.Text = "Available";
+            this.groupBox10.Controls.Add(this.tableLayoutPanel4);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox10.ForeColor = System.Drawing.Color.Red;
+            this.groupBox10.Location = new System.Drawing.Point(378, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(494, 640);
+            this.groupBox10.TabIndex = 12;
+            this.groupBox10.TabStop = false;
             // 
-            // checkBox_OnlyAvailable
+            // tableLayoutPanel4
             // 
-            this.checkBox_OnlyAvailable.AutoSize = true;
-            this.checkBox_OnlyAvailable.Location = new System.Drawing.Point(6, 19);
-            this.checkBox_OnlyAvailable.Name = "checkBox_OnlyAvailable";
-            this.checkBox_OnlyAvailable.Size = new System.Drawing.Size(93, 17);
-            this.checkBox_OnlyAvailable.TabIndex = 3;
-            this.checkBox_OnlyAvailable.Text = "Only Available";
-            this.checkBox_OnlyAvailable.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Controls.Add(this.Label_Manage_Type, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.Label_Manage_Name, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(488, 621);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // Label_Manage_Name
+            // 
+            this.Label_Manage_Name.AutoSize = true;
+            this.tableLayoutPanel4.SetColumnSpan(this.Label_Manage_Name, 3);
+            this.Label_Manage_Name.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Label_Manage_Name.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Manage_Name.ForeColor = System.Drawing.Color.Black;
+            this.Label_Manage_Name.Location = new System.Drawing.Point(3, 159);
+            this.Label_Manage_Name.Name = "Label_Manage_Name";
+            this.Label_Manage_Name.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.Label_Manage_Name.Size = new System.Drawing.Size(482, 47);
+            this.Label_Manage_Name.TabIndex = 2;
+            this.Label_Manage_Name.Text = "NAME";
+            this.Label_Manage_Name.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Label_Manage_Type
+            // 
+            this.Label_Manage_Type.AutoSize = true;
+            this.tableLayoutPanel4.SetColumnSpan(this.Label_Manage_Type, 3);
+            this.Label_Manage_Type.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Manage_Type.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Manage_Type.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Label_Manage_Type.Location = new System.Drawing.Point(3, 206);
+            this.Label_Manage_Type.Name = "Label_Manage_Type";
+            this.Label_Manage_Type.Size = new System.Drawing.Size(482, 25);
+            this.Label_Manage_Type.TabIndex = 3;
+            this.Label_Manage_Type.Text = "TYPE";
+            this.Label_Manage_Type.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -1227,7 +1280,7 @@ namespace ir_planner
             // 
             this.isOwnedDataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.isOwnedDataGridViewCheckBoxColumn1.DataPropertyName = "isOwned";
-            this.isOwnedDataGridViewCheckBoxColumn1.HeaderText = "Owned?";
+            this.isOwnedDataGridViewCheckBoxColumn1.HeaderText = "?Owned";
             this.isOwnedDataGridViewCheckBoxColumn1.Name = "isOwnedDataGridViewCheckBoxColumn1";
             this.isOwnedDataGridViewCheckBoxColumn1.Width = 63;
             // 
@@ -1381,6 +1434,8 @@ namespace ir_planner
             this.ScheduleTab.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.groupBox_Filter_Available.ResumeLayout(false);
+            this.groupBox_Filter_Available.PerformLayout();
             this.groupBox_Filter_Type.ResumeLayout(false);
             this.groupBox_Filter_Type.PerformLayout();
             this.groupBox_Filter_License.ResumeLayout(false);
@@ -1389,8 +1444,9 @@ namespace ir_planner
             this.tableLayoutPanel2.ResumeLayout(false);
             this.StatsTab.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox_Filter_Available.ResumeLayout(false);
-            this.groupBox_Filter_Available.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leagueModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carModelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackModelBindingSource)).EndInit();
@@ -1417,9 +1473,6 @@ namespace ir_planner
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage ScheduleTab;
         private System.Windows.Forms.TabPage StatsTab;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingSource statsModelBindingSource;
         private System.Windows.Forms.TabPage ManageTab;
         private System.Windows.Forms.DataGridViewTextBoxColumn counterDataGridViewTextBoxColumn;
@@ -1477,7 +1530,6 @@ namespace ir_planner
         private System.Windows.Forms.DataGridViewImageColumn imageBlobDataGridViewImageColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.GroupBox groupBox12;
@@ -1485,6 +1537,13 @@ namespace ir_planner
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox_Filter_Available;
         private System.Windows.Forms.CheckBox checkBox_OnlyAvailable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label Label_Manage_Name;
+        private System.Windows.Forms.Label Label_Manage_Type;
     }
 }
 
