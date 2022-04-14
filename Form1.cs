@@ -34,9 +34,10 @@ namespace ir_planner
             LoadTrackList();
             LoadLeaguesList();
 
-            groupBox_Filter_License.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
-            groupBox_Filter_Type.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
-            groupBox_Filter_Available.Controls.OfType<CheckBox>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
+            foreach (ToolStripMenuItem item in filtersToolStripMenuItem.DropDownItems.OfType<ToolStripMenuItem>().ToList())
+            {
+                item.DropDownItems.OfType<ToolStripMenuItem>().ToList().ForEach(c => c.CheckedChanged += C_CheckedChanged);
+            }
         }
 
         //FORM
@@ -48,43 +49,63 @@ namespace ir_planner
         private void LoadUserSettings()
         {
             userSettings = SQLiteDataAccess.LoadUserSettings();
-            checkBox_LicenseA.Checked = userSettings.FILTER_CLASS_A;
-            checkBox_LicenseB.Checked = userSettings.FILTER_CLASS_B;
-            checkBox_LicenseC.Checked = userSettings.FILTER_CLASS_C;
-            checkBox_LicenseD.Checked = userSettings.FILTER_CLASS_D;
-            checkBox_LicenseR.Checked = userSettings.FILTER_CLASS_R;
-            checkBox_TypeRoad.Checked = userSettings.FILTER_TYPE_ROAD;
-            checkBox_TypeOval.Checked = userSettings.FILTER_TYPE_OVAL;
-            checkBox_TypeRoadDirt.Checked = userSettings.FILTER_TYPE_ROAD_DIRT;
-            checkBox_TypeOvalDirt.Checked = userSettings.FILTER_TYPE_OVAL_DIRT;
-            checkBox_OnlyAvailable.Checked = userSettings.FILTER_AVAILABLE_ONLY;
+            aToolStripMenuItem.Checked = userSettings.FILTER_CLASS_A;
+            bToolStripMenuItem.Checked = userSettings.FILTER_CLASS_B;
+            cToolStripMenuItem.Checked = userSettings.FILTER_CLASS_C;
+            dToolStripMenuItem.Checked = userSettings.FILTER_CLASS_D;
+            rToolStripMenuItem.Checked = userSettings.FILTER_CLASS_R;
+            roadToolStripMenuItem.Checked = userSettings.FILTER_TYPE_ROAD;
+            ovalToolStripMenuItem.Checked = userSettings.FILTER_TYPE_OVAL;
+            dirtRoadToolStripMenuItem.Checked = userSettings.FILTER_TYPE_ROAD_DIRT;
+            dirtOvalToolStripMenuItem.Checked = userSettings.FILTER_TYPE_OVAL_DIRT;
+            onlyAvailableToolStripMenuItem.Checked = userSettings.FILTER_AVAILABLE_ONLY;
         }
 
         private void UpdateUserSettings()
         {
-            userSettings.FILTER_CLASS_A = checkBox_LicenseA.Checked;
-            userSettings.FILTER_CLASS_B = checkBox_LicenseB.Checked;
-            userSettings.FILTER_CLASS_C = checkBox_LicenseC.Checked;
-            userSettings.FILTER_CLASS_D = checkBox_LicenseD.Checked;
-            userSettings.FILTER_CLASS_R = checkBox_LicenseR.Checked;
-            userSettings.FILTER_TYPE_ROAD = checkBox_TypeRoad.Checked;
-            userSettings.FILTER_TYPE_OVAL = checkBox_TypeOval.Checked;
-            userSettings.FILTER_TYPE_ROAD_DIRT = checkBox_TypeRoadDirt.Checked;
-            userSettings.FILTER_TYPE_OVAL_DIRT = checkBox_TypeOvalDirt.Checked;
-            userSettings.FILTER_AVAILABLE_ONLY = checkBox_OnlyAvailable.Checked;
+            userSettings.FILTER_CLASS_A = aToolStripMenuItem.Checked;
+            userSettings.FILTER_CLASS_B = bToolStripMenuItem.Checked;
+            userSettings.FILTER_CLASS_C = cToolStripMenuItem.Checked;
+            userSettings.FILTER_CLASS_D = dToolStripMenuItem.Checked;
+            userSettings.FILTER_CLASS_R = rToolStripMenuItem.Checked;
+            userSettings.FILTER_TYPE_ROAD = roadToolStripMenuItem.Checked;
+            userSettings.FILTER_TYPE_OVAL = ovalToolStripMenuItem.Checked;
+            userSettings.FILTER_TYPE_ROAD_DIRT = dirtRoadToolStripMenuItem.Checked;
+            userSettings.FILTER_TYPE_OVAL_DIRT = dirtOvalToolStripMenuItem.Checked;
+            userSettings.FILTER_AVAILABLE_ONLY = onlyAvailableToolStripMenuItem.Checked;
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             if (e.TabPage.Text == "Schedule")
             {
+                filtersToolStripMenuItem.Enabled = true;
+                availableToolStripMenuItem.Enabled = true;
                 UpdateLeagueColors();
                 RefreshLeagueFilters();
             }
             else if (e.TabPage.Text == "Statistics")
             {
+                filtersToolStripMenuItem.Enabled = true;
+                availableToolStripMenuItem.Enabled = false;
+
                 LoadStats();
             }
+            else if (e.TabPage.Text == "Manage")
+            {
+                filtersToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void C_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateUserSettings();
+            SQLiteDataAccess.UpdateUserSettings(userSettings);
+
+            if (tabControl1.SelectedTab.Text == "Schedule")
+                RefreshLeagueFilters();
+            else if (tabControl1.SelectedTab.Text == "Statistics")
+                LoadStats();
         }
 
         //LEAGUE TAB
@@ -201,7 +222,7 @@ namespace ir_planner
 
             for (int u = 0; u < dataGridView_Leagues.RowCount; u++)
             {
-                if (FilterChecker(dataGridView_Leagues.Rows[u].Cells[2].Value.ToString(), dataGridView_Leagues.Rows[u].Cells[3].Value.ToString(), dataGridView_Leagues.Rows[u].Cells[1].Style.BackColor == Color.LightGreen))
+                if (FilterChecker(dataGridView_Leagues.Rows[u].Cells[2].Value.ToString(), dataGridView_Leagues.Rows[u].Cells[3].Value.ToString(), dataGridView_Leagues.Rows[u].Cells[1].Style.BackColor == Color.LightGreen, false))
                 {
                     dataGridView_Leagues.Rows[u].Visible = true;
                 }
@@ -221,45 +242,48 @@ namespace ir_planner
             LoadLeagueCarsList();
         }
 
-        private bool FilterChecker(string LicenseToCheck, string LeagueTypeToCheck, bool Available)
+        private bool FilterChecker(string LicenseToCheck, string LeagueTypeToCheck, bool Available, bool StatsMode)
         {
-            if (checkBox_OnlyAvailable.Checked == true && Available == false)
+            if (StatsMode == false)
             {
-                return false;
+                if (onlyAvailableToolStripMenuItem.Checked == true && Available == false)
+                {
+                    return false;
+                }
             }
 
             switch (LicenseToCheck)
             {
                 case "A":
-                    if (!checkBox_LicenseA.Checked)
+                    if (!aToolStripMenuItem.Checked)
                     {
                         return false;
                     }
                     break;
 
                 case "B":
-                    if (!checkBox_LicenseB.Checked)
+                    if (!bToolStripMenuItem.Checked)
                     {
                         return false;
                     }
                     break;
 
                 case "C":
-                    if (!checkBox_LicenseC.Checked)
+                    if (!cToolStripMenuItem.Checked)
                     {
                         return false;
                     }
                     break;
 
                 case "D":
-                    if (!checkBox_LicenseD.Checked)
+                    if (!dToolStripMenuItem.Checked)
                     {
                         return false;
                     }
                     break;
 
                 case "R":
-                    if (!checkBox_LicenseR.Checked)
+                    if (!rToolStripMenuItem.Checked)
                     {
                         return false;
                     }
@@ -273,28 +297,28 @@ namespace ir_planner
             switch (LeagueTypeToCheck)
             {
                 case "Road":
-                    if (!checkBox_TypeRoad.Checked)
+                    if (!roadToolStripMenuItem.Checked)
                     {
                         return false;
                     }
                     break;
 
                 case "Oval":
-                    if (!checkBox_TypeOval.Checked)
+                    if (!ovalToolStripMenuItem.Checked)
                     {
                         return false;
                     }
                     break;
 
                 case "Dirt Road":
-                    if (!checkBox_TypeRoadDirt.Checked)
+                    if (!dirtRoadToolStripMenuItem.Checked)
                     {
                         return false;
                     }
                     break;
 
                 case "Dirt Oval":
-                    if (!checkBox_TypeOvalDirt.Checked)
+                    if (!dirtOvalToolStripMenuItem.Checked)
                     {
                         return false;
                     }
@@ -322,14 +346,6 @@ namespace ir_planner
             UpdateLeagueColors();
 
             typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, null, dataGridView_Leagues, new object[] { true });
-        }
-
-        private void C_CheckedChanged(object sender, EventArgs e)
-        {
-            RefreshLeagueFilters();
-
-            UpdateUserSettings();
-            SQLiteDataAccess.UpdateUserSettings(userSettings);
         }
 
         //MANAGE TAB
@@ -439,16 +455,108 @@ namespace ir_planner
         private void LoadStats()
         {
             mostUsedCars = SQLiteDataAccess.LoadMostUsedCar();
-            dataGridView1.DataSource = mostUsedCars;
+            statsViewer1.FirstPlaceNumber = mostUsedCars[0].Counter;
+            statsViewer1.FirstPlaceText = mostUsedCars[0].Name;
+            statsViewer1.SecondPlaceNumber = mostUsedCars[1].Counter;
+            statsViewer1.SecondPlaceText = mostUsedCars[1].Name;
+            statsViewer1.ThirdPlaceNumber = mostUsedCars[2].Counter;
+            statsViewer1.ThirdPlaceText = mostUsedCars[2].Name;
 
             mostUsedTracks = SQLiteDataAccess.LoadMostUsedTrack();
-            dataGridView2.DataSource = mostUsedTracks;
-
-            bestValueTracks = GetBestValueTrack();
-            dataGridView3.DataSource = bestValueTracks;
+            statsViewer2.FirstPlaceText = mostUsedTracks[0].Name;
+            statsViewer2.FirstPlaceNumber = mostUsedTracks[0].Counter;
+            statsViewer2.SecondPlaceText = mostUsedTracks[1].Name;
+            statsViewer2.SecondPlaceNumber = mostUsedTracks[1].Counter;
+            statsViewer2.ThirdPlaceText = mostUsedTracks[2].Name;
+            statsViewer2.ThirdPlaceNumber = mostUsedTracks[2].Counter;
 
             bestValueCars = GetBestValueCar();
-            dataGridView4.DataSource = bestValueCars;
+            if (bestValueCars.Count > 2)
+            {
+                statsViewer3.ThirdPlaceText = bestValueCars[2].Name;
+                statsViewer3.ThirdPlaceNumber = bestValueCars[2].Counter;
+                statsViewer3.SecondPlaceText = bestValueCars[1].Name;
+                statsViewer3.SecondPlaceNumber = bestValueCars[1].Counter;
+                statsViewer3.FirstPlaceText = bestValueCars[0].Name;
+                statsViewer3.FirstPlaceNumber = bestValueCars[0].Counter;
+            }
+            else
+            {
+                if (bestValueCars.Count > 1)
+                {
+                    statsViewer3.ThirdPlaceText = "";
+                    statsViewer3.ThirdPlaceNumber = 0;
+                    statsViewer3.SecondPlaceText = bestValueCars[1].Name;
+                    statsViewer3.SecondPlaceNumber = bestValueCars[1].Counter;
+                    statsViewer3.FirstPlaceText = bestValueCars[0].Name;
+                    statsViewer3.FirstPlaceNumber = bestValueCars[0].Counter;
+                }
+                else
+                {
+                    if (bestValueCars.Count > 0)
+                    {
+                        statsViewer3.ThirdPlaceText = "";
+                        statsViewer3.ThirdPlaceNumber = 0;
+                        statsViewer3.SecondPlaceText = "";
+                        statsViewer3.SecondPlaceNumber = 0;
+                        statsViewer3.FirstPlaceText = bestValueCars[0].Name;
+                        statsViewer3.FirstPlaceNumber = bestValueCars[0].Counter;
+                    }
+                    else
+                    {
+                        statsViewer3.ThirdPlaceText = "";
+                        statsViewer3.ThirdPlaceNumber = 0;
+                        statsViewer3.SecondPlaceText = "";
+                        statsViewer3.SecondPlaceNumber = 0;
+                        statsViewer3.FirstPlaceText = "";
+                        statsViewer3.FirstPlaceNumber = 0;
+                    }
+                }
+            }
+
+            bestValueTracks = GetBestValueTrack();
+            if (bestValueTracks.Count > 2)
+            {
+                statsViewer4.ThirdPlaceText = bestValueTracks[2].Name;
+                statsViewer4.ThirdPlaceNumber = bestValueTracks[2].Counter;
+                statsViewer4.SecondPlaceText = bestValueTracks[1].Name;
+                statsViewer4.SecondPlaceNumber = bestValueTracks[1].Counter;
+                statsViewer4.FirstPlaceText = bestValueTracks[0].Name;
+                statsViewer4.FirstPlaceNumber = bestValueTracks[0].Counter;
+            }
+            else
+            {
+                if (bestValueTracks.Count > 1)
+                {
+                    statsViewer4.ThirdPlaceText = "";
+                    statsViewer4.ThirdPlaceNumber = 0;
+                    statsViewer4.SecondPlaceText = bestValueTracks[1].Name;
+                    statsViewer4.SecondPlaceNumber = bestValueTracks[1].Counter;
+                    statsViewer4.FirstPlaceText = bestValueTracks[0].Name;
+                    statsViewer4.FirstPlaceNumber = bestValueTracks[0].Counter;
+                }
+                else
+                {
+                    if (bestValueTracks.Count > 0)
+                    {
+                        statsViewer4.ThirdPlaceText = "";
+                        statsViewer4.ThirdPlaceNumber = 0;
+                        statsViewer4.SecondPlaceText = "";
+                        statsViewer4.SecondPlaceNumber = 0;
+                        statsViewer4.FirstPlaceText = bestValueTracks[0].Name;
+                        statsViewer4.FirstPlaceNumber = bestValueTracks[0].Counter;
+                    }
+                    else
+                    {
+                        statsViewer4.ThirdPlaceText = "";
+                        statsViewer4.ThirdPlaceNumber = 0;
+                        statsViewer4.SecondPlaceText = "";
+                        statsViewer4.SecondPlaceNumber = 0;
+                        statsViewer4.FirstPlaceText = "";
+                        statsViewer4.FirstPlaceNumber = 0;
+                    }
+                }
+            }
         }
 
         private List<StatsModel> GetBestValueCar()
@@ -457,6 +565,14 @@ namespace ir_planner
 
             foreach (DataGridViewRow row in dataGridView_Leagues.Rows)
             {
+                //filter test
+                LeagueModel LeagueInCurrentRow = (LeagueModel)row.DataBoundItem;
+                if (!FilterChecker(LeagueInCurrentRow.License.ToString(), LeagueInCurrentRow.Type, false, true))
+                {
+                    continue;
+                }
+                //
+
                 List<CarModel> CarsInLeague = SQLiteDataAccess.LoadLeagueCars(leagues[row.Index]);
                 int ownedCarsCount = 0;
 
@@ -506,6 +622,14 @@ namespace ir_planner
 
             foreach (DataGridViewRow row in dataGridView_Leagues.Rows)
             {
+                //filter test
+                LeagueModel LeagueInCurrentRow = (LeagueModel)row.DataBoundItem;
+                if (!FilterChecker(LeagueInCurrentRow.License.ToString(), LeagueInCurrentRow.Type, false, true))
+                {
+                    continue;
+                }
+                //
+
                 List<CarModel> CarsInLeague = SQLiteDataAccess.LoadLeagueCars(leagues[row.Index]);
                 int ownedCarsCount = 0;
 
