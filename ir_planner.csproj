@@ -74,10 +74,6 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="Stats View, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Stats View.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -117,7 +113,6 @@
       <DependentUpon>StatsViewer.cs</DependentUpon>
     </Compile>
     <Content Include="SQLite.Interop.dll" />
-    <Content Include="Stats View.dll" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
