@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ir_planner
 {
-    internal class StatsModel
+    public class StatsModel
     {
         public bool IsOwned { get; set; }
         public string Name { get; set; }

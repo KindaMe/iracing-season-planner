@@ -455,108 +455,16 @@ namespace ir_planner
         private void LoadStats()
         {
             mostUsedCars = SQLiteDataAccess.LoadMostUsedCar();
-            statsViewer1.FirstPlaceNumber = mostUsedCars[0].Counter;
-            statsViewer1.FirstPlaceText = mostUsedCars[0].Name;
-            statsViewer1.SecondPlaceNumber = mostUsedCars[1].Counter;
-            statsViewer1.SecondPlaceText = mostUsedCars[1].Name;
-            statsViewer1.ThirdPlaceNumber = mostUsedCars[2].Counter;
-            statsViewer1.ThirdPlaceText = mostUsedCars[2].Name;
+            statsViewer_MC.Stats = mostUsedCars;
 
             mostUsedTracks = SQLiteDataAccess.LoadMostUsedTrack();
-            statsViewer2.FirstPlaceText = mostUsedTracks[0].Name;
-            statsViewer2.FirstPlaceNumber = mostUsedTracks[0].Counter;
-            statsViewer2.SecondPlaceText = mostUsedTracks[1].Name;
-            statsViewer2.SecondPlaceNumber = mostUsedTracks[1].Counter;
-            statsViewer2.ThirdPlaceText = mostUsedTracks[2].Name;
-            statsViewer2.ThirdPlaceNumber = mostUsedTracks[2].Counter;
+            statsViewer_MT.Stats = mostUsedTracks;
 
             bestValueCars = GetBestValueCar();
-            if (bestValueCars.Count > 2)
-            {
-                statsViewer3.ThirdPlaceText = bestValueCars[2].Name;
-                statsViewer3.ThirdPlaceNumber = bestValueCars[2].Counter;
-                statsViewer3.SecondPlaceText = bestValueCars[1].Name;
-                statsViewer3.SecondPlaceNumber = bestValueCars[1].Counter;
-                statsViewer3.FirstPlaceText = bestValueCars[0].Name;
-                statsViewer3.FirstPlaceNumber = bestValueCars[0].Counter;
-            }
-            else
-            {
-                if (bestValueCars.Count > 1)
-                {
-                    statsViewer3.ThirdPlaceText = "";
-                    statsViewer3.ThirdPlaceNumber = 0;
-                    statsViewer3.SecondPlaceText = bestValueCars[1].Name;
-                    statsViewer3.SecondPlaceNumber = bestValueCars[1].Counter;
-                    statsViewer3.FirstPlaceText = bestValueCars[0].Name;
-                    statsViewer3.FirstPlaceNumber = bestValueCars[0].Counter;
-                }
-                else
-                {
-                    if (bestValueCars.Count > 0)
-                    {
-                        statsViewer3.ThirdPlaceText = "";
-                        statsViewer3.ThirdPlaceNumber = 0;
-                        statsViewer3.SecondPlaceText = "";
-                        statsViewer3.SecondPlaceNumber = 0;
-                        statsViewer3.FirstPlaceText = bestValueCars[0].Name;
-                        statsViewer3.FirstPlaceNumber = bestValueCars[0].Counter;
-                    }
-                    else
-                    {
-                        statsViewer3.ThirdPlaceText = "";
-                        statsViewer3.ThirdPlaceNumber = 0;
-                        statsViewer3.SecondPlaceText = "";
-                        statsViewer3.SecondPlaceNumber = 0;
-                        statsViewer3.FirstPlaceText = "";
-                        statsViewer3.FirstPlaceNumber = 0;
-                    }
-                }
-            }
+            statsViewer_BVC.Stats = bestValueCars;
 
             bestValueTracks = GetBestValueTrack();
-            if (bestValueTracks.Count > 2)
-            {
-                statsViewer4.ThirdPlaceText = bestValueTracks[2].Name;
-                statsViewer4.ThirdPlaceNumber = bestValueTracks[2].Counter;
-                statsViewer4.SecondPlaceText = bestValueTracks[1].Name;
-                statsViewer4.SecondPlaceNumber = bestValueTracks[1].Counter;
-                statsViewer4.FirstPlaceText = bestValueTracks[0].Name;
-                statsViewer4.FirstPlaceNumber = bestValueTracks[0].Counter;
-            }
-            else
-            {
-                if (bestValueTracks.Count > 1)
-                {
-                    statsViewer4.ThirdPlaceText = "";
-                    statsViewer4.ThirdPlaceNumber = 0;
-                    statsViewer4.SecondPlaceText = bestValueTracks[1].Name;
-                    statsViewer4.SecondPlaceNumber = bestValueTracks[1].Counter;
-                    statsViewer4.FirstPlaceText = bestValueTracks[0].Name;
-                    statsViewer4.FirstPlaceNumber = bestValueTracks[0].Counter;
-                }
-                else
-                {
-                    if (bestValueTracks.Count > 0)
-                    {
-                        statsViewer4.ThirdPlaceText = "";
-                        statsViewer4.ThirdPlaceNumber = 0;
-                        statsViewer4.SecondPlaceText = "";
-                        statsViewer4.SecondPlaceNumber = 0;
-                        statsViewer4.FirstPlaceText = bestValueTracks[0].Name;
-                        statsViewer4.FirstPlaceNumber = bestValueTracks[0].Counter;
-                    }
-                    else
-                    {
-                        statsViewer4.ThirdPlaceText = "";
-                        statsViewer4.ThirdPlaceNumber = 0;
-                        statsViewer4.SecondPlaceText = "";
-                        statsViewer4.SecondPlaceNumber = 0;
-                        statsViewer4.FirstPlaceText = "";
-                        statsViewer4.FirstPlaceNumber = 0;
-                    }
-                }
-            }
+            statsViewer_BVT.Stats = bestValueTracks;
         }
 
         private List<StatsModel> GetBestValueCar()

@@ -61,11 +61,6 @@ namespace ir_planner
             this.Label_Manage_Name = new System.Windows.Forms.Label();
             this.StatsTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.statsViewer1 = new Stats_View.StatsViewer();
-            this.statsViewer4 = new Stats_View.StatsViewer();
-            this.statsViewer3 = new Stats_View.StatsViewer();
-            this.statsViewer2 = new Stats_View.StatsViewer();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.filtersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.licenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,6 +105,10 @@ namespace ir_planner
             this.isOwnedDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trackModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statsViewer_MT = new ir_planner.StatsViewer();
+            this.statsViewer_BVC = new ir_planner.StatsViewer();
+            this.statsViewer_MC = new ir_planner.StatsViewer();
+            this.statsViewer_BVT = new ir_planner.StatsViewer();
             this.statsModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Leagues)).BeginInit();
@@ -549,7 +548,6 @@ namespace ir_planner
             // 
             this.StatsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.StatsTab.Controls.Add(this.tableLayoutPanel1);
-            this.StatsTab.Controls.Add(this.flowLayoutPanel1);
             this.StatsTab.Location = new System.Drawing.Point(4, 25);
             this.StatsTab.Name = "StatsTab";
             this.StatsTab.Padding = new System.Windows.Forms.Padding(3);
@@ -564,102 +562,19 @@ namespace ir_planner
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.statsViewer1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.statsViewer4, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.statsViewer3, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.statsViewer2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.statsViewer_MT, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.statsViewer_BVC, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.statsViewer_MC, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.statsViewer_BVT, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 600F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 600F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1250, 615);
-            this.tableLayoutPanel1.TabIndex = 8;
-            // 
-            // statsViewer1
-            // 
-            this.statsViewer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.statsViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statsViewer1.Description = "FILTERS WONT AFFECT THIS STAT";
-            this.statsViewer1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.statsViewer1.FirstPlaceNumber = 1;
-            this.statsViewer1.FirstPlaceText = "FIRST";
-            this.statsViewer1.Location = new System.Drawing.Point(23, 303);
-            this.statsViewer1.MainTitle = "MOST USED CARS";
-            this.statsViewer1.Name = "statsViewer1";
-            this.statsViewer1.SecondPlaceNumber = 2;
-            this.statsViewer1.SecondPlaceText = "SECOND";
-            this.statsViewer1.Size = new System.Drawing.Size(397, 294);
-            this.statsViewer1.TabIndex = 0;
-            this.statsViewer1.ThirdPlaceNumber = 3;
-            this.statsViewer1.ThirdPlaceText = "THIRD";
-            // 
-            // statsViewer4
-            // 
-            this.statsViewer4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.statsViewer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statsViewer4.Description = "BUYING THESE TRACKS WILL UNLOCK THE MOST RACES";
-            this.statsViewer4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.statsViewer4.FirstPlaceNumber = 1;
-            this.statsViewer4.FirstPlaceText = "FIRST";
-            this.statsViewer4.Location = new System.Drawing.Point(829, 3);
-            this.statsViewer4.MainTitle = "BEST VALUE FOR MONEY";
-            this.statsViewer4.Name = "statsViewer4";
-            this.statsViewer4.SecondPlaceNumber = 2;
-            this.statsViewer4.SecondPlaceText = "SECOND";
-            this.statsViewer4.Size = new System.Drawing.Size(398, 294);
-            this.statsViewer4.TabIndex = 3;
-            this.statsViewer4.ThirdPlaceNumber = 3;
-            this.statsViewer4.ThirdPlaceText = "THIRD";
-            // 
-            // statsViewer3
-            // 
-            this.statsViewer3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.statsViewer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statsViewer3.Description = "BUYING THESE CARS WILL UNLOCK THE MOST LEAGUES";
-            this.statsViewer3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.statsViewer3.FirstPlaceNumber = 1;
-            this.statsViewer3.FirstPlaceText = "FIRST";
-            this.statsViewer3.Location = new System.Drawing.Point(829, 303);
-            this.statsViewer3.MainTitle = "BEST VALUE FOR MONEY";
-            this.statsViewer3.Name = "statsViewer3";
-            this.statsViewer3.SecondPlaceNumber = 2;
-            this.statsViewer3.SecondPlaceText = "SECOND";
-            this.statsViewer3.Size = new System.Drawing.Size(398, 294);
-            this.statsViewer3.TabIndex = 2;
-            this.statsViewer3.ThirdPlaceNumber = 3;
-            this.statsViewer3.ThirdPlaceText = "THIRD";
-            // 
-            // statsViewer2
-            // 
-            this.statsViewer2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.statsViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statsViewer2.Description = "FILTERS WONT AFFECT THIS STAT";
-            this.statsViewer2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.statsViewer2.FirstPlaceNumber = 1;
-            this.statsViewer2.FirstPlaceText = "FIRST";
-            this.statsViewer2.Location = new System.Drawing.Point(23, 3);
-            this.statsViewer2.MainTitle = "MOST USED TRACKS";
-            this.statsViewer2.Name = "statsViewer2";
-            this.statsViewer2.SecondPlaceNumber = 2;
-            this.statsViewer2.SecondPlaceText = "SECOND";
-            this.statsViewer2.Size = new System.Drawing.Size(397, 294);
-            this.statsViewer2.TabIndex = 1;
-            this.statsViewer2.ThirdPlaceNumber = 3;
-            this.statsViewer2.ThirdPlaceText = "THIRD";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(772, 192);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel1.TabIndex = 7;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -693,7 +608,7 @@ namespace ir_planner
             this.dToolStripMenuItem,
             this.rToolStripMenuItem});
             this.licenseToolStripMenuItem.Name = "licenseToolStripMenuItem";
-            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
             this.licenseToolStripMenuItem.Text = "License";
             // 
             // aToolStripMenuItem
@@ -739,7 +654,7 @@ namespace ir_planner
             this.dirtRoadToolStripMenuItem,
             this.dirtOvalToolStripMenuItem});
             this.typeToolStripMenuItem.Name = "typeToolStripMenuItem";
-            this.typeToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.typeToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
             this.typeToolStripMenuItem.Text = "Type";
             // 
             // roadToolStripMenuItem
@@ -775,7 +690,7 @@ namespace ir_planner
             this.availableToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.onlyAvailableToolStripMenuItem});
             this.availableToolStripMenuItem.Name = "availableToolStripMenuItem";
-            this.availableToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.availableToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
             this.availableToolStripMenuItem.Text = "Available";
             // 
             // onlyAvailableToolStripMenuItem
@@ -1032,6 +947,58 @@ namespace ir_planner
             // 
             this.trackModelBindingSource.DataSource = typeof(ir_planner.TrackModel);
             // 
+            // statsViewer_MT
+            // 
+            this.statsViewer_MT.BackColor = System.Drawing.Color.Transparent;
+            this.statsViewer_MT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statsViewer_MT.Description = "DESCRIPTION";
+            this.statsViewer_MT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statsViewer_MT.Location = new System.Drawing.Point(420, 3);
+            this.statsViewer_MT.Name = "statsViewer_MT";
+            this.statsViewer_MT.Size = new System.Drawing.Size(391, 594);
+            this.statsViewer_MT.Stats = null;
+            this.statsViewer_MT.TabIndex = 0;
+            this.statsViewer_MT.Title = "most used tracks";
+            // 
+            // statsViewer_BVC
+            // 
+            this.statsViewer_BVC.BackColor = System.Drawing.Color.Transparent;
+            this.statsViewer_BVC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statsViewer_BVC.Description = "buying these cars will unlock the most leagues";
+            this.statsViewer_BVC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statsViewer_BVC.Location = new System.Drawing.Point(817, 3);
+            this.statsViewer_BVC.Name = "statsViewer_BVC";
+            this.statsViewer_BVC.Size = new System.Drawing.Size(393, 594);
+            this.statsViewer_BVC.Stats = null;
+            this.statsViewer_BVC.TabIndex = 1;
+            this.statsViewer_BVC.Title = "best value for money";
+            // 
+            // statsViewer_MC
+            // 
+            this.statsViewer_MC.BackColor = System.Drawing.Color.Transparent;
+            this.statsViewer_MC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statsViewer_MC.Description = "DESCRIPTION";
+            this.statsViewer_MC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statsViewer_MC.Location = new System.Drawing.Point(23, 3);
+            this.statsViewer_MC.Name = "statsViewer_MC";
+            this.statsViewer_MC.Size = new System.Drawing.Size(391, 594);
+            this.statsViewer_MC.Stats = null;
+            this.statsViewer_MC.TabIndex = 2;
+            this.statsViewer_MC.Title = "most used cars";
+            // 
+            // statsViewer_BVT
+            // 
+            this.statsViewer_BVT.BackColor = System.Drawing.Color.Transparent;
+            this.statsViewer_BVT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.statsViewer_BVT.Description = "buying these tracks will unlock the most races";
+            this.statsViewer_BVT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statsViewer_BVT.Location = new System.Drawing.Point(23, 603);
+            this.statsViewer_BVT.Name = "statsViewer_BVT";
+            this.statsViewer_BVT.Size = new System.Drawing.Size(391, 594);
+            this.statsViewer_BVT.Stats = null;
+            this.statsViewer_BVT.TabIndex = 3;
+            this.statsViewer_BVT.Title = "best value for money";
+            // 
             // statsModelBindingSource
             // 
             this.statsModelBindingSource.DataSource = typeof(ir_planner.StatsModel);
@@ -1068,7 +1035,6 @@ namespace ir_planner
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.StatsTab.ResumeLayout(false);
-            this.StatsTab.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1131,12 +1097,6 @@ namespace ir_planner
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label Label_Manage_Name;
         private System.Windows.Forms.Label Label_Manage_Type;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private Stats_View.StatsViewer statsViewer1;
-        private Stats_View.StatsViewer statsViewer4;
-        private Stats_View.StatsViewer statsViewer3;
-        private Stats_View.StatsViewer statsViewer2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem filtersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem licenseToolStripMenuItem;
@@ -1152,6 +1112,11 @@ namespace ir_planner
         private System.Windows.Forms.ToolStripMenuItem dirtOvalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem availableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem onlyAvailableToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private StatsViewer statsViewer_MT;
+        private StatsViewer statsViewer_BVC;
+        private StatsViewer statsViewer_MC;
+        private StatsViewer statsViewer_BVT;
     }
 }
 

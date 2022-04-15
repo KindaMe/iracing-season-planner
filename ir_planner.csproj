@@ -110,6 +110,12 @@
     <Compile Include="Models\UserSettingsModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatsViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StatsViewer.Designer.cs">
+      <DependentUpon>StatsViewer.cs</DependentUpon>
+    </Compile>
     <Content Include="SQLite.Interop.dll" />
     <Content Include="Stats View.dll" />
     <EmbeddedResource Include="Form1.resx">
@@ -129,6 +135,9 @@
     <Content Include="ir.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="StatsViewer.resx">
+      <DependentUpon>StatsViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CarModel.datasource" />
     <None Include="Properties\DataSources\LeagueModel.datasource" />
