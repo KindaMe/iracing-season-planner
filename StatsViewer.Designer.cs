@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.LABEL_DESCRIPTION = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.LABEL_2_NUM = new System.Windows.Forms.Label();
             this.LABEL_1_NUM = new System.Windows.Forms.Label();
             this.LABEL_3_NUM = new System.Windows.Forms.Label();
@@ -43,10 +43,10 @@
             this.LABEL_3_NAME = new System.Windows.Forms.Label();
             this.LABEL_MAIN_NAME = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.statsModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.isOwnedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.counterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statsModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -56,26 +56,43 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.LABEL_DESCRIPTION, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(425, 600);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // LABEL_DESCRIPTION
+            // 
+            this.LABEL_DESCRIPTION.AutoSize = true;
+            this.LABEL_DESCRIPTION.BackColor = System.Drawing.Color.Transparent;
+            this.LABEL_DESCRIPTION.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LABEL_DESCRIPTION.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LABEL_DESCRIPTION.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LABEL_DESCRIPTION.ForeColor = System.Drawing.Color.White;
+            this.LABEL_DESCRIPTION.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LABEL_DESCRIPTION.Location = new System.Drawing.Point(5, 555);
+            this.LABEL_DESCRIPTION.Margin = new System.Windows.Forms.Padding(5);
+            this.LABEL_DESCRIPTION.Name = "LABEL_DESCRIPTION";
+            this.LABEL_DESCRIPTION.Size = new System.Drawing.Size(415, 40);
+            this.LABEL_DESCRIPTION.TabIndex = 13;
+            this.LABEL_DESCRIPTION.Text = "DESCRIPTION";
+            this.LABEL_DESCRIPTION.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.Controls.Add(this.LABEL_DESCRIPTION, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.LABEL_2_NUM, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.LABEL_1_NUM, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.LABEL_3_NUM, 2, 1);
@@ -86,32 +103,13 @@
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(419, 294);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(419, 269);
             this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // LABEL_DESCRIPTION
-            // 
-            this.LABEL_DESCRIPTION.AutoSize = true;
-            this.LABEL_DESCRIPTION.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.SetColumnSpan(this.LABEL_DESCRIPTION, 3);
-            this.LABEL_DESCRIPTION.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LABEL_DESCRIPTION.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LABEL_DESCRIPTION.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_DESCRIPTION.ForeColor = System.Drawing.Color.White;
-            this.LABEL_DESCRIPTION.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.LABEL_DESCRIPTION.Location = new System.Drawing.Point(5, 248);
-            this.LABEL_DESCRIPTION.Margin = new System.Windows.Forms.Padding(5);
-            this.LABEL_DESCRIPTION.Name = "LABEL_DESCRIPTION";
-            this.LABEL_DESCRIPTION.Size = new System.Drawing.Size(409, 41);
-            this.LABEL_DESCRIPTION.TabIndex = 13;
-            this.LABEL_DESCRIPTION.Text = "DESCRIPTION";
-            this.LABEL_DESCRIPTION.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LABEL_2_NUM
             // 
@@ -122,7 +120,7 @@
             this.LABEL_2_NUM.Location = new System.Drawing.Point(0, 50);
             this.LABEL_2_NUM.Margin = new System.Windows.Forms.Padding(0);
             this.LABEL_2_NUM.Name = "LABEL_2_NUM";
-            this.LABEL_2_NUM.Size = new System.Drawing.Size(139, 58);
+            this.LABEL_2_NUM.Size = new System.Drawing.Size(139, 65);
             this.LABEL_2_NUM.TabIndex = 8;
             this.LABEL_2_NUM.Text = "2";
             this.LABEL_2_NUM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,7 +134,7 @@
             this.LABEL_1_NUM.Location = new System.Drawing.Point(139, 50);
             this.LABEL_1_NUM.Margin = new System.Windows.Forms.Padding(0);
             this.LABEL_1_NUM.Name = "LABEL_1_NUM";
-            this.LABEL_1_NUM.Size = new System.Drawing.Size(139, 58);
+            this.LABEL_1_NUM.Size = new System.Drawing.Size(139, 65);
             this.LABEL_1_NUM.TabIndex = 9;
             this.LABEL_1_NUM.Text = "1";
             this.LABEL_1_NUM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,7 +148,7 @@
             this.LABEL_3_NUM.Location = new System.Drawing.Point(278, 50);
             this.LABEL_3_NUM.Margin = new System.Windows.Forms.Padding(0);
             this.LABEL_3_NUM.Name = "LABEL_3_NUM";
-            this.LABEL_3_NUM.Size = new System.Drawing.Size(141, 58);
+            this.LABEL_3_NUM.Size = new System.Drawing.Size(141, 65);
             this.LABEL_3_NUM.TabIndex = 0;
             this.LABEL_3_NUM.Text = "3";
             this.LABEL_3_NUM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,11 +159,11 @@
             this.LABEL_2_NAME.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LABEL_2_NAME.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LABEL_2_NAME.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LABEL_2_NAME.Location = new System.Drawing.Point(5, 118);
+            this.LABEL_2_NAME.Location = new System.Drawing.Point(5, 125);
             this.LABEL_2_NAME.Margin = new System.Windows.Forms.Padding(5, 10, 5, 0);
             this.LABEL_2_NAME.Name = "LABEL_2_NAME";
             this.LABEL_2_NAME.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.LABEL_2_NAME.Size = new System.Drawing.Size(129, 125);
+            this.LABEL_2_NAME.Size = new System.Drawing.Size(129, 144);
             this.LABEL_2_NAME.TabIndex = 10;
             this.LABEL_2_NAME.Text = "SECOND";
             this.LABEL_2_NAME.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -176,11 +174,11 @@
             this.LABEL_1_NAME.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LABEL_1_NAME.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LABEL_1_NAME.ForeColor = System.Drawing.Color.Gold;
-            this.LABEL_1_NAME.Location = new System.Drawing.Point(144, 108);
+            this.LABEL_1_NAME.Location = new System.Drawing.Point(144, 115);
             this.LABEL_1_NAME.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LABEL_1_NAME.Name = "LABEL_1_NAME";
             this.LABEL_1_NAME.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.LABEL_1_NAME.Size = new System.Drawing.Size(129, 135);
+            this.LABEL_1_NAME.Size = new System.Drawing.Size(129, 154);
             this.LABEL_1_NAME.TabIndex = 11;
             this.LABEL_1_NAME.Text = "FIRST";
             this.LABEL_1_NAME.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -191,11 +189,11 @@
             this.LABEL_3_NAME.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LABEL_3_NAME.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LABEL_3_NAME.ForeColor = System.Drawing.Color.Chocolate;
-            this.LABEL_3_NAME.Location = new System.Drawing.Point(283, 128);
+            this.LABEL_3_NAME.Location = new System.Drawing.Point(283, 135);
             this.LABEL_3_NAME.Margin = new System.Windows.Forms.Padding(5, 20, 5, 0);
             this.LABEL_3_NAME.Name = "LABEL_3_NAME";
             this.LABEL_3_NAME.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.LABEL_3_NAME.Size = new System.Drawing.Size(131, 115);
+            this.LABEL_3_NAME.Size = new System.Drawing.Size(131, 134);
             this.LABEL_3_NAME.TabIndex = 12;
             this.LABEL_3_NAME.Text = "THIRD";
             this.LABEL_3_NAME.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -225,7 +223,6 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,6 +232,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.isOwnedDataGridViewCheckBoxColumn,
             this.counterDataGridViewTextBoxColumn,
@@ -249,19 +247,15 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 300);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 283);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(8);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(425, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(409, 259);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // statsModelBindingSource
-            // 
-            this.statsModelBindingSource.DataSource = typeof(ir_planner.StatsModel);
             // 
             // isOwnedDataGridViewCheckBoxColumn
             // 
@@ -291,15 +285,20 @@
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // statsModelBindingSource
+            // 
+            this.statsModelBindingSource.DataSource = typeof(ir_planner.StatsModel);
+            // 
             // StatsViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "StatsViewer";
             this.Size = new System.Drawing.Size(425, 600);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -315,13 +314,13 @@
         private System.Windows.Forms.Label LABEL_DESCRIPTION;
         private System.Windows.Forms.Label LABEL_2_NUM;
         private System.Windows.Forms.Label LABEL_1_NUM;
-        private System.Windows.Forms.Label LABEL_3_NUM;
         private System.Windows.Forms.Label LABEL_2_NAME;
         private System.Windows.Forms.Label LABEL_1_NAME;
-        private System.Windows.Forms.Label LABEL_3_NAME;
         private System.Windows.Forms.Label LABEL_MAIN_NAME;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource statsModelBindingSource;
+        private System.Windows.Forms.Label LABEL_3_NUM;
+        private System.Windows.Forms.Label LABEL_3_NAME;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn counterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;

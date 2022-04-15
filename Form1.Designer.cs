@@ -951,7 +951,7 @@ namespace ir_planner
             // 
             this.statsViewer_MT.BackColor = System.Drawing.Color.Transparent;
             this.statsViewer_MT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statsViewer_MT.Description = "DESCRIPTION";
+            this.statsViewer_MT.Description = "filters won\'t affect this stat";
             this.statsViewer_MT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.statsViewer_MT.Location = new System.Drawing.Point(420, 3);
             this.statsViewer_MT.Name = "statsViewer_MT";
@@ -977,7 +977,7 @@ namespace ir_planner
             // 
             this.statsViewer_MC.BackColor = System.Drawing.Color.Transparent;
             this.statsViewer_MC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.statsViewer_MC.Description = "DESCRIPTION";
+            this.statsViewer_MC.Description = "filters won\'t affect this stat";
             this.statsViewer_MC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.statsViewer_MC.Location = new System.Drawing.Point(23, 3);
             this.statsViewer_MC.Name = "statsViewer_MC";

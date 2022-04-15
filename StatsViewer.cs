@@ -108,5 +108,11 @@ namespace ir_planner
                 Invalidate();
             }
         }
+
+        //border color
+        //private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    ControlPaint.DrawBorder(e.Graphics, this.ClientRectangle, Color.DimGray, ButtonBorderStyle.Solid);
+        //}
     }
 }
