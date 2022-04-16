@@ -15,12 +15,7 @@ namespace ir_planner
         [STAThread]
         private static void Main()
         {
-            //temporary fix so .exe can connect to database without changing folder/file permissions
-            //if (IsAdministrator() == false)
-            //{
-            //    MessageBox.Show("Run as Administrator", "DataBase Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            AppDomain.CurrentDomain.SetData("DataDirectory", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

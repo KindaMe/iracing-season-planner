@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 using Dapper;
+using System.Diagnostics;
 
 namespace ir_planner
 {
@@ -124,7 +125,15 @@ namespace ir_planner
 
         private static string LoadConnectionString(string id = "Default")
         {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            bool isInVisualStudio = Debugger.IsAttached && AppDomain.CurrentDomain.FriendlyName.EndsWith("vshost.exe");
+            if (isInVisualStudio)
+            {
+                return ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+            }
+            else
+            {
+                return ConfigurationManager.ConnectionStrings["AppData"].ConnectionString;
+            }
         }
     }
 }
