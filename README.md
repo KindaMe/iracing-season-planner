@@ -1,4 +1,4 @@
-# iRacing Season Planner in finally here!
+# iRacing Season Planner is finally here!
 ### And it works!
 
 # How does it work?
