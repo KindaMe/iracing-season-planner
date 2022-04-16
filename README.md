@@ -5,7 +5,7 @@
 ### First things first. 
 Simply download the latest installer [**[Releases]**](https://github.com/KindaMe/iracing-season-planner/releases) and do the thing people do with installers.
 
-### Now inside the iRSP
+### Now inside the iRSP.
 You select all the cars and tracks you currently own.
 ![obraz](https://user-images.githubusercontent.com/75385707/163654957-596013ff-29fc-4cd3-ad5f-275de84a6308.png)
 
